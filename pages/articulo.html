@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html class="dark" lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZENVORA | Detalle del Producto</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: { 
+                extend: { 
+                    colors: { "primary": "#39ff14", "background": "#131313", "surface": "#0A0A0A" },
+                    fontFamily: { 'space': ['Space Grotesk', 'sans-serif'], 'inter': ['Inter', 'sans-serif'] }
+                } 
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-white min-h-screen flex flex-col font-inter">
+    <div id="navbar-container"></div>
+
+    <main id="product-container" class="flex-grow pt-24 pb-32 px-10">
+        <div class="container mx-auto">
+            <div id="loading" class="text-center py-20">
+                <h2 class="font-space text-4xl font-black uppercase italic animate-pulse">Buscando en el Arsenal...</h2>
+            </div>
+            
+            <div id="error" class="hidden text-center py-20">
+                <h2 class="font-space text-4xl font-black uppercase italic text-red-500 mb-6">Error 404</h2>
+                <p class="text-white/40 mb-10">El producto no existe o fue retirado del arsenal.</p>
+                <a href="marketplace.html" class="bg-white text-black px-10 py-5 rounded-2xl font-black uppercase text-sm tracking-widest hover:bg-primary transition-all">VOLVER AL MARKETPLACE</a>
+            </div>
+
+            <div id="product-content" class="hidden flex flex-col lg:flex-row gap-20 items-start">
+                <!-- Galeria -->
+                <div class="w-full lg:w-1/2 aspect-square rounded-3xl overflow-hidden bg-black border border-white/5 shadow-2xl relative group">
+                    <img id="product-image" src="" class="w-full h-full object-contain p-8 group-hover:scale-105 transition-all duration-700">
+                    <div id="product-category" class="absolute top-8 left-8 bg-black/80 px-4 py-1 border border-white/10 text-[10px] font-black text-primary tracking-[0.3em] uppercase rounded-full">CATEGORÍA</div>
+                </div>
+
+                <!-- Info -->
+                <div class="w-full lg:w-1/2">
+                    <h1 id="product-title" class="font-space text-6xl font-black uppercase tracking-tighter mb-4 leading-none italic">CARGANDO...</h1>
+                    <div class="flex items-center gap-6 mb-10">
+                        <span id="product-price" class="text-5xl font-black text-primary">$0.00</span>
+                    </div>
+
+                    <div class="bg-surface p-10 rounded-3xl border border-white/5 mb-12 shadow-xl">
+                        <h2 class="text-[10px] uppercase font-black tracking-[0.4em] text-white/40 mb-6 block">DESCRIPCIÓN TÉCNICA</h2>
+                        <div id="product-description" class="text-white/60 leading-relaxed text-lg"></div>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row gap-6">
+                        <a id="buy-button" href="#" target="_blank" class="flex-grow bg-white text-black text-center py-6 rounded-2xl font-black uppercase text-sm tracking-[0.3em] hover:bg-primary hover:scale-[1.02] transition-all shadow-2xl">VER EN MERCADO LIBRE</a>
+                        <a href="marketplace.html" class="px-10 py-6 border border-white/10 rounded-2xl font-black uppercase text-[10px] tracking-widest text-center hover:border-white/40 transition-all">VOLVER</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-black py-20 border-t border-white/5 px-10 text-center">
+        <p class="text-white/20 text-[10px] uppercase font-black tracking-widest">© 2026 ZENVORA. Laburo de Elite.</p>
+    </footer>
+
+    <script type="module">
+        import { renderNavbar } from '../components/renderNavbar.js';
+        renderNavbar('arsenal');
+        import '../scripts/product-detail.js';
+    </script>
+</body>
+</html>

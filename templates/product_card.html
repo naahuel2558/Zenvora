@@ -1,0 +1,15 @@
+﻿<div class="product-card">
+    <div class="product-image">
+        <span class="product-badge">Top Ventas</span>
+        <!-- Placeholder for image -->
+        <img src="{{IMAGE_URL}}" alt="{{PRODUCT_NAME}}" style="width:100%; height:100%; object-fit:cover;">
+    </div>
+    <h3 class="product-title">{{PRODUCT_NAME}}</h3>
+    <p class="product-price">{{PRICE}}</p>
+    <ul class="product-features">
+        {{#FEATURES}}
+        <li>{{.}}</li>
+        {{/FEATURES}}
+    </ul>
+    <a href="{{AFFILIATE_LINK}}" class="cta-button" target="_blank">Ver en Mercado Libre</a>
+</div>

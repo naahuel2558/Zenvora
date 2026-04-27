@@ -1,0 +1,276 @@
+﻿<!DOCTYPE html>
+
+<html class="dark" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Blog Fitness - ZENVORA AR</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space Grotesk:wght@400;700&family=Inter:wght@300;400;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Space Grotesk:wght@400;700&family=Inter:wght@300;400;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Space Grotesk:wght@400;700&family=Inter:wght@300;400;700&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary": "#f8f9f9",
+                        "secondary-fixed": "#e5e2e1",
+                        "on-primary-fixed-variant": "#015300",
+                        "on-error-container": "#ffdad6",
+                        "tertiary-container": "#dcdcdc",
+                        "surface-container-low": "#1c1b1b",
+                        "tertiary-fixed": "#e2e2e2",
+                        "surface-bright": "#3a3939",
+                        "error-container": "#93000a",
+                        "background": "#131313",
+                        "primary-fixed-dim": "#02e600",
+                        "tertiary-fixed-dim": "#c6c6c7",
+                        "surface-container-lowest": "#0e0e0e",
+                        "secondary-container": "#474746",
+                        "on-surface": "#e5e2e1",
+                        "on-secondary-fixed-variant": "#474746",
+                        "on-tertiary-fixed-variant": "#454747",
+                        "on-primary-fixed": "#002200",
+                        "outline": "#84967c",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "on-secondary-container": "#b7b5b4",
+                        "on-background": "#e5e2e1",
+                        "primary-fixed": "#77ff61",
+                        "surface-variant": "#353534",
+                        "on-primary": "#013a00",
+                        "surface-dim": "#131313",
+                        "on-tertiary": "#2f3131",
+                        "inverse-primary": "#026e00",
+                        "outline-variant": "#3b4b35",
+                        "secondary": "#c8c6c5",
+                        "surface-tint": "#02e600",
+                        "surface-container": "#201f1f",
+                        "primary-container": "#00ff00",
+                        "error": "#ffb4ab",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "surface-container-highest": "#353534",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "on-error": "#690005",
+                        "inverse-surface": "#e5e2e1",
+                        "on-tertiary-container": "#5f6161",
+                        "on-secondary": "#313030",
+                        "on-primary-container": "#027100",
+                        "primary": "#eaffde",
+                        "inverse-on-surface": "#313030",
+                        "surface": "#131313",
+                        "surface-container-high": "#2a2a2a",
+                        "on-surface-variant": "#b9ccaf"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-md": "16px",
+                        "gutter": "24px",
+                        "container-max": "1280px",
+                        "stack-lg": "32px",
+                        "section-gap": "160px",
+                        "stack-sm": "8px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Lexend"],
+                        "headline-lg": ["Lexend"],
+                        "body-md": ["Inter"],
+                        "display-xl": ["Lexend"],
+                        "body-lg": ["Inter"],
+                        "label-bold": ["Lexend"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "headline-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "display-xl": ["80px", {"lineHeight": "1.0", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "label-bold": ["14px", {"lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "600"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined[style*="FILL' 1"] {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background antialiased min-h-screen font-body-md selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-black/90 backdrop-blur-xl border-b border-zinc-900">
+<div class="flex justify-between items-center h-20 px-6 max-w-7xl mx-auto">
+<div class="text-2xl font-black italic text-white uppercase tracking-tighter">
+                PERFORMANCE_LAB
+            </div>
+<nav class="hidden md:flex gap-8 items-center font-['Lexend'] font-bold uppercase tracking-tighter">
+<a class="text-zinc-400 hover:text-white transition-colors duration-200" href="#">Inicio</a>
+<a class="text-zinc-400 hover:text-white transition-colors duration-200" href="#">Productos</a>
+<a class="text-green-400 border-b-2 border-green-400 pb-1" href="#">Blog</a>
+<a class="text-zinc-400 hover:text-white transition-colors duration-200" href="#">Contacto</a>
+</nav>
+<div class="flex items-center">
+<button class="text-green-400 hover:text-white transition-colors duration-200 active:scale-95 transition-transform">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+</button>
+</div>
+</div>
+</header>
+<main class="pt-20">
+<!-- Blog Hero -->
+<section class="py-section-gap px-6 bg-surface-container-lowest text-center relative overflow-hidden">
+<div class="absolute inset-0 z-0 opacity-20">
+<div class="w-full h-full bg-[url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&amp;w=2940&amp;auto=format&amp;fit=crop')] bg-cover bg-center" data-alt="Dark dramatic lighting gym background with heavy weights and aggressive atmosphere, low contrast"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-transparent"></div>
+</div>
+<div class="relative z-10 max-w-container-max mx-auto flex flex-col items-center gap-stack-lg">
+<h1 class="font-display-xl text-display-xl text-on-surface uppercase drop-shadow-2xl">
+                    Blog <span class="text-primary-container">Fitness</span>
+</h1>
+<p class="font-headline-md text-headline-md text-secondary max-w-2xl">
+                    Tu mejor versiÃ³n empieza hoy, desde casa.
+                </p>
+</div>
+</section>
+<!-- Featured Article -->
+<section class="px-6 py-stack-lg max-w-container-max mx-auto -mt-32 relative z-20">
+<article class="bg-surface-container-low border border-surface-variant rounded-xl overflow-hidden group cursor-pointer flex flex-col md:flex-row transition-all duration-300 hover:border-primary-container">
+<div class="md:w-3/5 h-80 md:h-auto overflow-hidden relative">
+<img alt="Featured article" class="w-full h-full object-cover grayscale transition-all duration-500 group-hover:grayscale-0 group-hover:scale-105" data-alt="Muscular athlete performing intense kettlebell workout in dark home gym setting with dramatic overhead lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMj4qF8n89S_b2CaN3ncSC2r1PcYUAbqdvzC1jT5MNJ3VH5AAZSUkaRXQMxsDNHY4u_TcW5QbQRzFNORwtfGM-5v3kBfDUNa0UU4nZ1iAbaLAmDSkAliqk1btsZatBfIGZaKCnl2dNdicbaSM8KagecaqoZjzVKimijJaml7WX9Kfm6FFgUsxu8JgN6BEO2gQ_YWIEk8m4Sg5OkvaExoTiaG6hSUqki2fiGE8n_jh3Lzlr51P-cx9zFQmz4kW1HYDS5hhGGl_Ilsw"/>
+<div class="absolute top-4 left-4 border border-surface-variant px-3 py-1 bg-black/50 backdrop-blur-md uppercase font-label-bold text-label-bold text-primary-container tracking-widest">
+                        Destacado
+                    </div>
+</div>
+<div class="md:w-2/5 p-8 flex flex-col justify-center gap-stack-md bg-surface-container-low">
+<span class="font-label-bold text-label-bold text-secondary uppercase tracking-widest">Entrenamiento en Casa</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface group-hover:text-primary-container transition-colors duration-300">
+                        La guÃ­a definitiva para hipertrofia sin pesas
+                    </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant line-clamp-3">
+                        Descubre cÃ³mo maximizar tus ganancias musculares utilizando ÃƒÂºnicamente tu peso corporal y objetos cotidianos. Una rutina estructurada para resultados reales.
+                    </p>
+<div class="mt-4">
+<button class="bg-primary-container text-on-primary-container font-label-bold text-label-bold uppercase py-3 px-6 hover:bg-white transition-colors duration-300">
+                            Leer mÃ¡s
+                        </button>
+</div>
+</div>
+</article>
+</section>
+<!-- Categories Section -->
+<section class="py-stack-lg px-6 max-w-container-max mx-auto border-b-2 border-surface-variant mb-stack-lg">
+<div class="flex flex-wrap gap-4 items-center">
+<span class="font-label-bold text-label-bold text-secondary uppercase mr-4">Filtrar por:</span>
+<button class="border border-primary-container text-primary-container font-label-bold text-label-bold uppercase py-2 px-4 bg-primary-container/10">
+                    Todos
+                </button>
+<button class="border border-surface-variant text-on-surface hover:border-primary-container hover:text-primary-container font-label-bold text-label-bold uppercase py-2 px-4 transition-colors">
+                    Ejercicio en casa
+                </button>
+<button class="border border-surface-variant text-on-surface hover:border-primary-container hover:text-primary-container font-label-bold text-label-bold uppercase py-2 px-4 transition-colors">
+                    Principiantes
+                </button>
+<button class="border border-surface-variant text-on-surface hover:border-primary-container hover:text-primary-container font-label-bold text-label-bold uppercase py-2 px-4 transition-colors">
+                    Equipamiento
+                </button>
+</div>
+</section>
+<!-- Articles Grid -->
+<section class="px-6 pb-section-gap max-w-container-max mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Article Card 1 -->
+<article class="bg-surface-container-lowest border border-surface-variant flex flex-col group cursor-pointer hover:border-primary-container transition-colors duration-300">
+<div class="h-64 overflow-hidden relative">
+<img alt="Article 1" class="w-full h-full object-cover grayscale transition-all duration-500 group-hover:grayscale-0 group-hover:scale-105" data-alt="Person doing pushups in a dark modern apartment setting with minimalist aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBdX5f84oifO8w681oC6gSjYf2yhsOaxceOZwNtZzkG-L7nrWViS4298KWXtdjxA7TzkY9nF-rgv21mVZAk6FNh-Z9Sk0A05RFXB_5MvpWi4HiCcyBQY88OjLMpXyv-d5nPoTG3jp-20nTyflcCB0G0NCNH0YE9sj2dkMOHRbfBvy8XxRQPj4F88qVfyTnLPtIf_1UNMO8nmEYRRhj_3doH0Se0JLwjk2sbKQjPZGO_FJXrqcRQ40QNiCaNQR9pM4x6dMncNmUqyVM"/>
+</div>
+<div class="p-6 flex flex-col gap-stack-sm flex-grow">
+<span class="font-label-bold text-label-bold text-primary-container uppercase tracking-widest">Principiantes</span>
+<h3 class="font-headline-md text-headline-md text-on-surface group-hover:text-white transition-colors duration-300 mt-2">
+                            5 errores comunes al empezar a entrenar
+                        </h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2 mt-2">
+                            Evita estos fallos tÃ­picos que frenan tu progreso y aumentan el riesgo de lesiones durante tus primeras semanas.
+                        </p>
+<div class="mt-auto pt-6">
+<span class="font-label-bold text-label-bold text-white uppercase group-hover:text-primary-container flex items-center gap-2">
+                                Leer mÃ¡s <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</span>
+</div>
+</div>
+</article>
+<!-- Article Card 2 -->
+<article class="bg-surface-container-lowest border border-surface-variant flex flex-col group cursor-pointer hover:border-primary-container transition-colors duration-300">
+<div class="h-64 overflow-hidden relative">
+<img alt="Article 2" class="w-full h-full object-cover grayscale transition-all duration-500 group-hover:grayscale-0 group-hover:scale-105" data-alt="Close up of black adjustable dumbbells on dark textured floor in moody lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9yqxiNXcnIJxdcFh2dwARruYfHRXLxr5oh0_l2LhL-McHCsM1X0stA6cJFYGXBz-tbTYrwGKaVjphSS1Rzmz2ObG8kLHAvbj5MBasNhjugZoMNCiW2Zh0o99zF8VCOkwclxCB8cOmcK2Xo0RFX55cLD6bNFiIoYDse8ZZ3VZE-HXbWTLTL6xMuvJR3BSBfHA63tgQKdD7SsnaHQqv3DC2hSsLeCplnJXPHdgzMP71QBzf16E3C5G5Mkuehud7XLhqtIO6Nks5ZmY"/>
+</div>
+<div class="p-6 flex flex-col gap-stack-sm flex-grow">
+<span class="font-label-bold text-label-bold text-primary-container uppercase tracking-widest">Equipamiento</span>
+<h3 class="font-headline-md text-headline-md text-on-surface group-hover:text-white transition-colors duration-300 mt-2">
+                            Mancuernas ajustables: Ã‚Â¿Valen la pena?
+                        </h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2 mt-2">
+                            AnÃ¡lisis completo del equipamiento mÃ¡s versÃ¡til para tu home gym. Pros, contras y recomendaciones.
+                        </p>
+<div class="mt-auto pt-6">
+<span class="font-label-bold text-label-bold text-white uppercase group-hover:text-primary-container flex items-center gap-2">
+                                Leer mÃ¡s <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</span>
+</div>
+</div>
+</article>
+<!-- Article Card 3 -->
+<article class="bg-surface-container-lowest border border-surface-variant flex flex-col group cursor-pointer hover:border-primary-container transition-colors duration-300">
+<div class="h-64 overflow-hidden relative">
+<img alt="Article 3" class="w-full h-full object-cover grayscale transition-all duration-500 group-hover:grayscale-0 group-hover:scale-105" data-alt="Woman doing yoga stretches in minimalist dark room with subtle natural light coming from side window" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQ4RafkyDvPvDdvGU_FJwOSpr2Vv7UiFGYxHbhWPKbayEphxfY2D6Bm-elYD7H3ilRgPPngHlsqTeWc4mXE9k69FsDl_wQoUJFW_ETqM-lt7CUFyF2cmCw4e6FHenDlRTNX0mDexwfrh9dPbp4yL4NkbWncR-lYblHWP1qJEt8VmyGxgx1FTfz-pfK1nATJBBG0iaAweaQj7rNw2UyKbHL29kIDqQ_RMFMFPmcgr4dfQ476rtMIVuzFHQMjYzXvnB-9ExaApJMzSs"/>
+</div>
+<div class="p-6 flex flex-col gap-stack-sm flex-grow">
+<span class="font-label-bold text-label-bold text-primary-container uppercase tracking-widest">Ejercicio en casa</span>
+<h3 class="font-headline-md text-headline-md text-on-surface group-hover:text-white transition-colors duration-300 mt-2">
+                            Movilidad y recuperaciÃ³n post-entreno
+                        </h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2 mt-2">
+                            Rutina de 15 minutos para optimizar tu recuperaciÃ³n, reducir el dolor muscular y mejorar tu rango de movimiento.
+                        </p>
+<div class="mt-auto pt-6">
+<span class="font-label-bold text-label-bold text-white uppercase group-hover:text-primary-container flex items-center gap-2">
+                                Leer mÃ¡s <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</span>
+</div>
+</div>
+</article>
+</div>
+<div class="mt-12 flex justify-center">
+<button class="border-2 border-white text-white font-label-bold text-label-bold uppercase py-3 px-8 hover:bg-white hover:text-black transition-colors duration-300">
+                    Cargar mÃ¡s artÃ­culos
+                </button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-black w-full border-t border-zinc-900">
+<div class="flex flex-col md:flex-row justify-between items-center py-12 px-8 max-w-7xl mx-auto gap-6">
+<div class="text-lg font-black text-white uppercase tracking-tighter">
+                PERFORMANCE_LAB
+            </div>
+<div class="font-['Lexend'] text-[10px] tracking-[0.2em] uppercase font-medium text-zinc-600 text-center">
+                Ã‚Â© 2024 PERFORMANCE LAB. ELITE RESULTS DRIVEN.
+            </div>
+<nav class="flex gap-6 font-['Lexend'] text-[10px] tracking-[0.2em] uppercase font-medium">
+<a class="text-zinc-600 hover:text-white transition-colors opacity-80 hover:opacity-100" href="#">Privacy</a>
+<a class="text-zinc-600 hover:text-white transition-colors opacity-80 hover:opacity-100" href="#">Terms</a>
+<a class="text-zinc-600 hover:text-white transition-colors opacity-80 hover:opacity-100" href="#">Affiliate Disclosure</a>
+</nav>
+</div>
+</footer>
+</body></html>

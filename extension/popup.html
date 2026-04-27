@@ -1,0 +1,134 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Space Grotesk:wght@400;700&family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        body { 
+            width: 320px; 
+            margin: 0;
+            padding: 20px; 
+            background: #0D0D0D; 
+            color: #FFFFFF;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        h2 { 
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 18px;
+            font-weight: 800;
+            color: #00FF00; 
+            text-transform: uppercase;
+            letter-spacing: -0.05em;
+            margin: 0;
+        }
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #E53E3E;
+            box-shadow: 0 0 10px #E53E3E;
+        }
+        .status-dot.online {
+            background: #00FF00;
+            box-shadow: 0 0 10px #00FF00;
+        }
+        .info {
+            font-size: 10px;
+            color: rgba(255,255,255,0.4);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 10px;
+        }
+        .list { 
+            max-height: 180px; 
+            overflow-y: auto; 
+            background: rgba(255,255,255,0.03); 
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 12px; 
+            padding: 8px; 
+            font-size: 11px; 
+            margin-bottom: 20px;
+            scrollbar-width: thin;
+            scrollbar-color: #00FF00 transparent;
+        }
+        .item { 
+            padding: 10px; 
+            border-bottom: 1px solid rgba(255,255,255,0.05); 
+            white-space: nowrap; 
+            overflow: hidden; 
+            text-overflow: ellipsis;
+            color: rgba(255,255,255,0.7);
+        }
+        .item:last-child { border-bottom: none; }
+        .item:hover { color: #00FF00; background: rgba(0,255,0,0.05); }
+
+        .btn-primary { 
+            width: 100%; 
+            padding: 14px; 
+            background: #00FF00; 
+            color: #000000; 
+            border: none; 
+            border-radius: 10px; 
+            cursor: pointer 
+            font-weight: 900; 
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .btn-primary:hover { 
+            background: #FFFFFF;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0,255,0,0.2);
+        }
+        .btn-primary:active { transform: translateY(0); }
+
+        .btn-secondary { 
+            background: transparent;
+            color: rgba(255,255,255,0.3);
+            border: 1px solid rgba(255,255,255,0.1);
+            margin-top: 10px;
+            font-size: 9px;
+            padding: 8px;
+            width: 100%;
+            border-radius: 8px;
+            cursor: pointer
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+        .btn-secondary:hover { color: #E53E3E; border-color: #E53E3E; }
+
+        .footer {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 9px;
+            color: rgba(255,255,255,0.2);
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h2>Ã°Å¸Â¥Â· NINJA COLLECTOR</h2>
+        <div id="statusDot" class="status-dot"></div>
+    </div>
+    
+    <div class="info">Capturas Recientes</div>
+    <div class="list" id="linkList">Buscando rastros...</div>
+    
+    <button id="openCatalogBtn" class="btn-primary">VER MARKETPLACE Local</button>
+    <button id="clearBtn" class="btn-secondary">Limpiar Rastros</button>
+
+    <div class="footer">ZENVORA AR Ã¢â‚¬Â¢ v1.4</div>
+
+    <script src="popup.js"></script>
+</body>
+</html>

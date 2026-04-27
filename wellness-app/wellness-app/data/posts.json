@@ -1,0 +1,22 @@
+﻿[
+  {
+    "id": "1",
+    "userId": "1714151234567",
+    "username": "ZENVORA_Coach",
+    "title": "Biohacking 101: La guÃ­a definitiva",
+    "content": "El biohacking no es solo para multimillonarios de Silicon Valley. Se trata de optimizar tu biologÃ­a con lo que tenÃ©s a mano...",
+    "category": "Biohacking",
+    "images": ["https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=1000&auto=format&fit=crop"],
+    "createdAt": "2026-04-26T12:00:00.000Z"
+  },
+  {
+    "id": "2",
+    "userId": "1714151234567",
+    "username": "ZENVORA_Coach",
+    "title": "SuplementaciÃ³n para atletas de elite",
+    "content": "No todos los suplementos son iguales. Hoy analizamos por quÃ© la creatina monohidratada sigue siendo el rey de la montaÃ±a.",
+    "category": "NutriciÃ³n",
+    "images": ["https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=1000&auto=format&fit=crop"],
+    "createdAt": "2026-04-26T14:30:00.000Z"
+  }
+]

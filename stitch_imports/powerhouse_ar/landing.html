@@ -1,0 +1,328 @@
+﻿<!DOCTYPE html>
+
+<html class="dark" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ZENVORA AR - ALTO RENDIMIENTO</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space Grotesk:wght@400;700&family=Inter:wght@300;400;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Space Grotesk:wght@400;700&family=Inter:wght@300;400;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Space Grotesk:wght@400;700&family=Inter:wght@300;400;700&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-lowest": "#0e0e0e",
+                    "on-surface-variant": "#b9ccaf",
+                    "on-tertiary": "#2f3131",
+                    "primary-fixed": "#77ff61",
+                    "inverse-on-surface": "#313030",
+                    "surface-tint": "#02e600",
+                    "surface-container-highest": "#353534",
+                    "secondary-fixed-dim": "#c8c6c5",
+                    "on-error-container": "#ffdad6",
+                    "on-surface": "#e5e2e1",
+                    "on-primary-fixed": "#002200",
+                    "surface-dim": "#131313",
+                    "primary": "#eaffde",
+                    "error": "#ffb4ab",
+                    "surface-container-low": "#1c1b1b",
+                    "on-secondary": "#313030",
+                    "error-container": "#93000a",
+                    "on-tertiary-fixed": "#1a1c1c",
+                    "secondary-container": "#474746",
+                    "on-tertiary-fixed-variant": "#454747",
+                    "primary-fixed-dim": "#02e600",
+                    "tertiary-container": "#dcdcdc",
+                    "on-error": "#690005",
+                    "surface": "#131313",
+                    "primary-container": "#00ff00",
+                    "on-background": "#e5e2e1",
+                    "on-tertiary-container": "#5f6161",
+                    "surface-container-high": "#2a2a2a",
+                    "on-secondary-fixed-variant": "#474746",
+                    "tertiary": "#f8f9f9",
+                    "surface-container": "#201f1f",
+                    "secondary-fixed": "#e5e2e1",
+                    "background": "#131313",
+                    "secondary": "#c8c6c5",
+                    "on-secondary-fixed": "#1c1b1b",
+                    "inverse-primary": "#026e00",
+                    "outline-variant": "#3b4b35",
+                    "surface-bright": "#3a3939",
+                    "on-secondary-container": "#b7b5b4",
+                    "on-primary-container": "#027100",
+                    "tertiary-fixed-dim": "#c6c6c7",
+                    "surface-variant": "#353534",
+                    "on-primary": "#013a00",
+                    "outline": "#84967c",
+                    "inverse-surface": "#e5e2e1",
+                    "on-primary-fixed-variant": "#015300",
+                    "tertiary-fixed": "#e2e2e2"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gutter": "24px",
+                    "section-gap": "160px",
+                    "container-max": "1280px",
+                    "stack-lg": "32px",
+                    "stack-sm": "8px",
+                    "stack-md": "16px"
+            },
+            "fontFamily": {
+                    "body-lg": ["Inter"],
+                    "label-bold": ["Lexend"],
+                    "body-md": ["Inter"],
+                    "headline-lg": ["Lexend"],
+                    "display-xl": ["Lexend"],
+                    "headline-md": ["Lexend"]
+            },
+            "fontSize": {
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "label-bold": ["14px", {"lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "display-xl": ["80px", {"lineHeight": "1.0", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                    "headline-md": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        body { background-color: #000000; color: #e5e2e1; }
+        .glass-panel { background: rgba(10, 10, 10, 0.7); backdrop-filter: blur(20px); border: 1px solid #1F1F1F; }
+        .card-hover:hover { border-color: #00FF00; box-shadow: 0 0 40px rgba(0, 255, 0, 0.2); }
+        .primary-cta { background-color: #00FF00; color: #000000; transition: all 0.2s ease; }
+        .primary-cta:hover { background-color: #ffffff; color: #000000; transform: scale(1.02); }
+        .secondary-cta { border: 2px solid #ffffff; color: #ffffff; transition: all 0.2s ease; }
+        .secondary-cta:hover { border-color: #00FF00; color: #00FF00; }
+        .border-bottom-focus { border-bottom: 2px solid #1F1F1F; }
+        .border-bottom-focus:focus-within { border-bottom-color: #00FF00; }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col font-body-md text-body-md selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 border-b border-[#1F1F1F] bg-black/80 backdrop-blur-xl">
+<div class="flex justify-between items-center px-6 md:px-12 py-4 max-w-screen-2xl mx-auto">
+<a class="text-2xl font-black text-[#00FF00] italic tracking-tighter hover:scale-105 transition-transform duration-200 active:scale-95" href="#">ZENVORA AR</a>
+<div class="hidden md:flex items-center gap-8 font-['Lexend'] font-bold tracking-tight uppercase">
+<a class="text-white/80 hover:text-[#00FF00] transition-colors hover:scale-105 duration-200 active:scale-95" href="#productos">Productos</a>
+<a class="text-white/80 hover:text-[#00FF00] transition-colors hover:scale-105 duration-200 active:scale-95" href="#beneficios">Beneficios</a>
+<a class="text-white/80 hover:text-[#00FF00] transition-colors hover:scale-105 duration-200 active:scale-95" href="#blog">Blog</a>
+<a class="text-white/80 hover:text-[#00FF00] transition-colors hover:scale-105 duration-200 active:scale-95" href="#contacto">Contacto</a>
+</div>
+<a class="font-['Lexend'] font-bold tracking-tight uppercase text-[#00FF00] hover:scale-105 transition-transform duration-200 active:scale-95 hidden sm:block" href="#productos">
+                Ver Productos
+            </a>
+<!-- Mobile Menu Button -->
+<button class="md:hidden text-white/80 hover:text-[#00FF00] transition-colors">
+<span class="material-symbols-outlined" style="font-size: 32px;">menu</span>
+</button>
+</div>
+</nav>
+<main class="flex-grow pt-24">
+<!-- Hero Section -->
+<section class="relative min-h-[921px] flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<div class="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent z-10"></div>
+<img alt="Hero Background" class="w-full h-full object-cover grayscale opacity-60" data-alt="Athletic person lifting heavy weights in a dark, dramatic, high-contrast home gym environment with moody spotlighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXbewauExm53phyWPk60WeSJdyZdyP0nTWoVVbK5hYaKzN1ZV130JuBzbJufP07ELC9KZ9mx-0IwEig_L5sZ_jant4XGke0VzS24fQALHH5kDHzS0X9Rd-hc0oVdf71XIF08lN3Olaya86xN9GRfgnJBKjAZAvVJ6DizFysNPpUutHfZYcKd7aLCPAlIsqcgwnX5pqdlZHbP7LUhRa_HYqkGk2OD9wiI18CUQm9XCCkGM3S6qbDY6zFibt58Zra8FtuobHOYNjbUU"/>
+</div>
+<div class="relative z-20 max-w-[1280px] mx-auto px-gutter text-center flex flex-col items-center gap-stack-lg">
+<div class="inline-flex items-center gap-2 border border-[#1F1F1F] px-4 py-2 uppercase font-label-bold text-label-bold text-on-surface-variant backdrop-blur-sm">
+<span class="w-2 h-2 bg-primary-container rounded-full"></span>
+                    Alto Rendimiento en Casa
+                </div>
+<h1 class="font-display-xl text-display-xl text-on-background max-w-4xl uppercase">
+                    TRANSFORMÃƒÂ TU CUERPO <span class="text-primary-container">SIN SALIR DE CASA</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mt-4">
+                    Equipamiento premium diseÃ±ado para atletas reales. LlevÃ¡ tu entrenamiento al siguiente nivel sin depender de un gimnasio.
+                </p>
+<div class="flex flex-col sm:flex-row gap-6 mt-8">
+<a class="primary-cta px-10 py-5 font-label-bold text-label-bold uppercase flex items-center gap-3" href="#productos">
+                        Ver productos
+                        <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+</div>
+</section>
+<!-- Problem Section -->
+<section class="py-[160px] max-w-[1280px] mx-auto px-gutter">
+<div class="text-center mb-20">
+<h2 class="font-headline-lg text-headline-lg text-on-background uppercase mb-stack-md">
+                    Entrenar no tiene que ser <span class="text-on-surface-variant">caro ni difÃ­cil</span>
+</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl mx-auto">
+                    Sabemos lo que frena tu progreso. Hemos diseÃ±ado soluciones para superar las barreras mÃ¡s comunes del fitness moderno.
+                </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="glass-panel p-8 flex flex-col items-center text-center gap-stack-md">
+<span class="material-symbols-outlined text-surface-tint text-6xl" style="font-variation-settings: 'FILL' 1;">timer_off</span>
+<h3 class="font-headline-md text-headline-md text-on-background uppercase">Falta de tiempo</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Viajes al gimnasio y esperas por mÃ¡quinas consumen tu dÃ­a. RecuperÃ¡ tus horas entrenando donde vivÃ­s.</p>
+</div>
+<div class="glass-panel p-8 flex flex-col items-center text-center gap-stack-md">
+<span class="material-symbols-outlined text-surface-tint text-6xl" style="font-variation-settings: 'FILL' 1;">payments</span>
+<h3 class="font-headline-md text-headline-md text-on-background uppercase">Cuotas Altas</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Mensualidades infladas y matrÃ­culas ocultas. InvertÃ­ una vez en equipo propio y entrenÃ¡ gratis para siempre.</p>
+</div>
+<div class="glass-panel p-8 flex flex-col items-center text-center gap-stack-md">
+<span class="material-symbols-outlined text-surface-tint text-6xl" style="font-variation-settings: 'FILL' 1;">battery_0_bar</span>
+<h3 class="font-headline-md text-headline-md text-on-background uppercase">Sin MotivaciÃ³n</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Ambientes abarrotados e intimidantes. Crea tu propio santuario de rendimiento con tus propias reglas.</p>
+</div>
+</div>
+</section>
+<!-- Solution / Asymmetric E-commerce Hybrid -->
+<section class="py-[160px] bg-surface-container-lowest border-y border-[#1F1F1F]" id="beneficios">
+<div class="max-w-[1280px] mx-auto px-gutter">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+<div class="lg:col-span-5 flex flex-col gap-stack-lg">
+<div class="inline-flex border border-[#1F1F1F] px-4 py-2 uppercase font-label-bold text-label-bold text-primary-container w-max">
+                            La SoluciÃ³n Definitiva
+                        </div>
+<h2 class="font-headline-lg text-headline-lg text-on-background uppercase leading-tight">
+                            Tu gimnasio privado,<br/>resultados <span class="text-surface-tint">profesionales</span>.
+                        </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+                            Nuestro equipamiento estÃ¡ fabricado con los mismos estÃ¡ndares que los gimnasios de alto rendimiento, pero optimizado para el espacio de tu hogar. No mÃ¡s excusas.
+                        </p>
+<ul class="flex flex-col gap-4 mt-4">
+<li class="flex items-center gap-4 border-b border-[#1F1F1F] pb-4">
+<span class="material-symbols-outlined text-surface-tint">done_all</span>
+<span class="font-body-md text-body-md text-on-background">Materiales de grado industrial de alta durabilidad</span>
+</li>
+<li class="flex items-center gap-4 border-b border-[#1F1F1F] pb-4">
+<span class="material-symbols-outlined text-surface-tint">done_all</span>
+<span class="font-body-md text-body-md text-on-background">DiseÃ±os compactos y modulares para espacios reducidos</span>
+</li>
+<li class="flex items-center gap-4 pb-4">
+<span class="material-symbols-outlined text-surface-tint">done_all</span>
+<span class="font-body-md text-body-md text-on-background">GarantÃ­a de rendimiento en cada componente</span>
+</li>
+</ul>
+</div>
+<div class="lg:col-span-7 grid grid-cols-2 gap-4">
+<img alt="Premium Dumbbells" class="w-full h-[400px] object-cover grayscale hover:grayscale-0 transition-all duration-500 rounded-sm" data-alt="Close up of premium textured black dumbbell resting on dark rubber gym floor with dramatic lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTqhLGeNNBpV-GRxHPyjNoHqwDpszh9y7S_wDm0JHeabU_x3GbsGNt4iLTiRsnROvecWvnSYNiSkTUAs0zbsxK4ghwraBVE5eiFBR3LSmVruRKx7LWbet2DrzsqyvP0iB3oQfUJ0lBGoBE9Twr6GoO65la61icg6uJGBx0R3yOrTtuuV4nQ7V8WrvWWrNr8njw8UA_ZXh4-aBwEArju_mQZp9Y3bH-w9UwkyITt-hwDeafhFEUOK11yR5ig8ywAvCbsoAWkfAX-Ec"/>
+<img alt="Resistance Bands" class="w-full h-[400px] object-cover grayscale hover:grayscale-0 transition-all duration-500 rounded-sm mt-12" data-alt="High quality resistance bands hanging in a minimalist dark home gym setup with subtle green neon glow" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTxr5bkADY1LtNkBnc_y1euGv_wbtkXAh0zbo_LTjh9_gchkKFNnjE9WnSJNJR3mGAbNGcNgaWs_pQxlemXfTH9xc1wUr88Eu6jn-Wq_HEUeIGd-7K9DcsLh00tAPcW2c5gmXgDLJDS-FMpko2OLUCZjNgvvDvFUKSOwtDFPgjjh4BD8-_qvQhL7U6Wj3LiImM5sAI5XoFlCZ6KCBaMeejiSeeVLujW9xGgyj0HgnEigOtiX_miFt5uRtWCkJ0RP4gzxdVnHQpLWM"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Featured Products Grid -->
+<section class="py-[160px] max-w-[1280px] mx-auto px-gutter" id="productos">
+<div class="flex justify-between items-end mb-20 border-b border-[#1F1F1F] pb-8">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-on-background uppercase">ARSENAL DE <span class="text-surface-tint">ENTRENAMIENTO</span></h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-2">Equipamiento tÃ¡ctico para tu hogar.</p>
+</div>
+<a class="hidden md:flex items-center gap-2 font-label-bold text-label-bold text-on-background uppercase hover:text-surface-tint transition-colors" href="#">
+                    Ver catÃ¡logo completo <span class="material-symbols-outlined">arrow_outward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Product Card 1 -->
+<div class="glass-panel card-hover flex flex-col h-full group cursor-pointer transition-all duration-300">
+<div class="relative h-64 overflow-hidden bg-surface-container-low">
+<img alt="Kits de mancuernas" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" data-alt="Set of adjustable modular black dumbbells on a dark background studio shot" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8qt1GPewp2dObp7YUQ3wUUyKky9xT9hff2FY3J5rITpbXt4CBL3MDPo1A5qXWBEHgkpqhdkPjLvkbihkGzuCQXoPugcH8PofaGGx2P7qcR0_X_39YrPIyw2ahGjySb3pGxysEcFlVX2Y5ytDG-2jIBlG0SKEqd2LoQY3jROC6luq59sIZP6YXz1Z3-7o6PeZRzhb6bp4unBgGF8Oh6erOicRFFI9GZuX8_Zu3C8PEcUNMQpF8xhgVPYLWb94W7KpBLCZtXTfQilE"/>
+<div class="absolute top-4 right-4 bg-black px-3 py-1 font-label-bold text-label-bold text-surface-tint uppercase text-[10px] border border-[#1F1F1F]">
+                            Top Ventas
+                        </div>
+</div>
+<div class="p-8 flex flex-col flex-grow gap-4">
+<h3 class="font-headline-md text-headline-md text-on-background uppercase text-2xl">Kit Mancuernas Ajustables</h3>
+<ul class="flex flex-col gap-2 font-body-md text-body-md text-on-surface-variant mb-6 flex-grow">
+<li class="flex gap-2 items-start"><span class="material-symbols-outlined text-surface-tint text-sm mt-1">check</span> Reemplaza 15 pares tradicionales</li>
+<li class="flex gap-2 items-start"><span class="material-symbols-outlined text-surface-tint text-sm mt-1">check</span> Sistema de ajuste rÃ¡pido (2-24kg)</li>
+<li class="flex gap-2 items-start"><span class="material-symbols-outlined text-surface-tint text-sm mt-1">check</span> Acero fundido de alta densidad</li>
+</ul>
+<a class="secondary-cta w-full py-4 text-center font-label-bold text-label-bold uppercase block mt-auto" href="#">
+                            Ver en Mercado Libre
+                        </a>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="glass-panel card-hover flex flex-col h-full group cursor-pointer transition-all duration-300">
+<div class="relative h-64 overflow-hidden bg-surface-container-low">
+<img alt="Bandas elÃ¡sticas" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" data-alt="Thick heavy duty latex resistance bands coiled on a dark gym floor" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB84Ed3I-fua5G0eF9n2c7wVp8VD-k6P3c7hF_MIZ3x8UjPCpeNqFylq9V6g9IfUy_YAirCYX72ESeSOFHq1kmj6UbWtKtlxBmiqu39qV43uMslXqJBbBhDpmqKnv8-D0OqoZIsAPbCLTfZlsj_5gwG5CPhXoNytmgTP59pJXvLne7V4CaINtUyn568EX3aNu7-HCj7EBRO-7P6_Ne3QbKn3w4ZR4sqTZa0iyTW3GHD0f3XgQzEoW2uma43g7QVmbtfV5Q4cpxP2b4"/>
+</div>
+<div class="p-8 flex flex-col flex-grow gap-4">
+<h3 class="font-headline-md text-headline-md text-on-background uppercase text-2xl">Pack Bandas de TensiÃ³n Pro</h3>
+<ul class="flex flex-col gap-2 font-body-md text-body-md text-on-surface-variant mb-6 flex-grow">
+<li class="flex gap-2 items-start"><span class="material-symbols-outlined text-surface-tint text-sm mt-1">check</span> 5 niveles de resistencia progresiva</li>
+<li class="flex gap-2 items-start"><span class="material-symbols-outlined text-surface-tint text-sm mt-1">check</span> LÃ¡tex 100% natural anti-corte</li>
+<li class="flex gap-2 items-start"><span class="material-symbols-outlined text-surface-tint text-sm mt-1">check</span> Incluye anclaje de puerta robusto</li>
+</ul>
+<a class="secondary-cta w-full py-4 text-center font-label-bold text-label-bold uppercase block mt-auto" href="#">
+                            Ver en Mercado Libre
+                        </a>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="glass-panel card-hover flex flex-col h-full group cursor-pointer transition-all duration-300">
+<div class="relative h-64 overflow-hidden bg-surface-container-low">
+<img alt="Colchonetas Pro" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" data-alt="Thick textured black exercise mat rolled up on a dark concrete floor" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9A9nQ7pkCgAyhn7QFmw5sXIlLI7PFBeUw01e0rtWBhKIlyJCT427a-4ZrqjAfKRn7JrD-GsgEBNTVvvxC_gKVvwJ_fNJCYA8u6I3BoJn4vjhhxDNflpqotGsIm101m7y1gn1aVJZeWFi4XvuYi3Izko8U4OvZ1j919GVHi0gQVzyywWtqLZBOAY9Nu2eb23yZlwL4CFkQsH6aW-kseM6VGHzrEQTpwWQUisSWiKETVd5OsKJ4q-edPm29fxIGdvjcOMblEw7pf_g"/>
+</div>
+<div class="p-8 flex flex-col flex-grow gap-4">
+<h3 class="font-headline-md text-headline-md text-on-background uppercase text-2xl">Colchoneta Impacto Zero</h3>
+<ul class="flex flex-col gap-2 font-body-md text-body-md text-on-surface-variant mb-6 flex-grow">
+<li class="flex gap-2 items-start"><span class="material-symbols-outlined text-surface-tint text-sm mt-1">check</span> 15mm de espuma viscoelÃ¡stica alta densidad</li>
+<li class="flex gap-2 items-start"><span class="material-symbols-outlined text-surface-tint text-sm mt-1">check</span> Textura antideslizante diamond-grip</li>
+<li class="flex gap-2 items-start"><span class="material-symbols-outlined text-surface-tint text-sm mt-1">check</span> Superficie repelente al sudor</li>
+</ul>
+<a class="secondary-cta w-full py-4 text-center font-label-bold text-label-bold uppercase block mt-auto" href="#">
+                            Ver en Mercado Libre
+                        </a>
+</div>
+</div>
+</div>
+<a class="md:hidden mt-12 w-full secondary-cta py-4 text-center font-label-bold text-label-bold uppercase block" href="#">
+                Ver catÃ¡logo completo
+            </a>
+</section>
+<!-- Final CTA Section -->
+<section class="relative py-[160px] overflow-hidden border-t border-[#1F1F1F]">
+<div class="absolute inset-0 z-0 opacity-20">
+<div class="absolute inset-0 bg-black/50 z-10"></div>
+<img alt="Action Background" class="w-full h-full object-cover" data-alt="Abstract dynamic motion blur of heavy ropes being slammed in a dark industrial gym setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjdcW_zpMWM1QEMDI8gGt0h3DMEyWaaa7sVqRjtu8CqfVx_QiyobUuAC-ExYPl6kedb5ezzPI0fmREe3L8xFfOZhbPkvFXDEHx1TanGBFsVtHSnv8N_LE4YRD1xxgL7vkSdxhwWUZ3jF9mqBn_wJhq1W4QhULTzIxrzZ1PuSc1MX51a_DuI2hrdwzsuQwj24euf5bM9fso8HSIMBlfyaxWU1a5wGUE6w1ozoRffNkPB44STmW73wiOa1z9SFJrsWmWmxHV7MocQrQ"/>
+</div>
+<div class="relative z-20 max-w-[800px] mx-auto px-gutter text-center flex flex-col items-center gap-8">
+<h2 class="font-display-xl text-display-xl text-on-background uppercase tracking-tighter">
+                    EL MOMENTO <br/><span class="text-surface-tint">ES AHORA</span>
+</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-4">
+                    DejÃ¡ de posponer tu progreso. EquipÃ¡ tu espacio y empezÃ¡ a construir tu mejor versiÃ³n hoy mismo.
+                </p>
+<a class="primary-cta px-12 py-6 font-label-bold text-label-bold uppercase text-lg shadow-[0_0_30px_rgba(0,255,0,0.3)]" href="#productos">
+                    Explorar productos
+                </a>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full border-t border-[#1F1F1F] bg-[#0A0A0A] mt-auto relative z-50">
+<div class="flex flex-col md:flex-row justify-between items-center px-8 py-12 gap-6 max-w-screen-2xl mx-auto">
+<div class="text-xl font-black text-white italic tracking-tighter">
+                ZENVORA AR
+            </div>
+<div class="flex flex-wrap justify-center gap-6 md:gap-8 font-['Lexend'] text-sm tracking-wide">
+<a class="text-gray-500 hover:text-white transition-colors" href="#">TÃ©rminos y Condiciones</a>
+<a class="text-gray-500 hover:text-white transition-colors" href="#">Privacidad</a>
+<a class="text-gray-500 hover:text-white transition-colors" href="#">Afiliados</a>
+<a class="text-gray-500 hover:text-white transition-colors" href="#">Mercado Libre</a>
+</div>
+<div class="font-['Lexend'] text-sm tracking-wide text-gray-500 text-center md:text-right">
+                Ã‚Â© 2024 ZENVORA ARGENTINA - ALTO RENDIMIENTO
+            </div>
+</div>
+</footer>
+</body></html>

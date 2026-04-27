@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZENVORA | Registro</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space Grotesk:wght@400;700&family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Space Grotesk', sans-serif; background: #0D0D0D; color: white; }
+        .glass { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); }
+    </style>
+</head>
+<body class="min-h-screen flex items-center justify-center p-6">
+    <div class="glass w-full max-w-md p-10 rounded-[2rem] shadow-2xl">
+        <h1 class="text-4xl font-black uppercase italic tracking-tighter mb-2 text-green-500">Unite al Team</h1>
+        <p class="text-white/40 uppercase tracking-widest text-xs mb-10 italic">Creamos el futuro del fitness</p>
+        
+        <form id="registerForm" class="space-y-6">
+             <div>
+                <label class="block text-[10px] font-black uppercase tracking-widest text-white/40 mb-2">Username</label>
+                <input type="text" id="username" required class="w-full bg-white/5 border border-white/10 p-4 rounded-xl outline-none focus:border-green-500 transition-all font-sans">
+            </div>
+            <div>
+                <label class="block text-[10px] font-black uppercase tracking-widest text-white/40 mb-2">Email</label>
+                <input type="email" id="email" required class="w-full bg-white/5 border border-white/10 p-4 rounded-xl outline-none focus:border-green-500 transition-all font-sans">
+            </div>
+            <div>
+                <label class="block text-[10px] font-black uppercase tracking-widest text-white/40 mb-2">Password</label>
+                <input type="password" id="password" required class="w-full bg-white/5 border border-white/10 p-4 rounded-xl outline-none focus:border-green-500 transition-all font-sans">
+            </div>
+            <button type="submit" class="w-full bg-green-500 text-black p-5 rounded-xl font-black uppercase tracking-[0.2em] text-sm hover:bg-white transition-all transform active:scale-95 shadow-[0_20px_50px_-10px_rgba(34,197,94,0.3)]">
+                Crear Cuenta
+            </button>
+        </form>
+        
+        <p class="mt-8 text-center text-xs text-white/30 uppercase tracking-widest">
+            Ã‚Â¿Ya sos parte? <a href="login.html" class="text-green-500 font-black">IniciÃ¡ SesiÃ³n</a>
+        </p>
+    </div>
+
+    <script>
+        document.getElementById('registerForm').onsubmit = async (e) => {
+            e.preventDefault();
+            const res = await fetch('/api/register', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ username: username.value, email: email.value, password: password.value })
+            });
+            const data = await res.json();
+            if (res.ok) {
+                alert('Ã‚Â¡Registro exitoso! Ya podÃ©s entrar.');
+                window.location.href = 'login.html';
+            } else alert(data.error);
+        };
+    </script>
+</body>
+</html>

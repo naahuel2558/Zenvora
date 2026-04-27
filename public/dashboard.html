@@ -1,0 +1,169 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZENVORA | Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space Grotesk:wght@400;700&family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space Grotesk:wght@400;700&family=Inter:wght@300;400;700&display=swap" rel="stylesheet"/>
+    <style>
+        body { font-family: 'Space Grotesk', sans-serif; background: #0D0D0D; color: white; }
+        .glass { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); }
+    </style>
+</head>
+<body class="min-h-screen">
+    <nav class="border-b border-white/5 py-6 px-10 flex justify-between items-center glass fixed top-0 w-full z-50">
+        <h1 class="text-2xl font-black uppercase italic tracking-tighter">ZENVORA <span class="text-green-500">Board</span></h1>
+        <div class="flex items-center gap-6">
+            <span id="userInfo" class="text-xs uppercase tracking-widest text-white/40"></span>
+            <button onclick="logout()" class="text-[10px] font-black uppercase tracking-widest text-red-500 hover:text-white transition-all">Cerrar SesiÃ³n</button>
+        </div>
+    </nav>
+
+    <main class="pt-32 px-10 max-w-[1400px] mx-auto pb-40">
+        <div class="flex justify-between items-end mb-16">
+            <div>
+                <h2 class="text-5xl font-black uppercase tracking-tighter">Gestionar Contenido</h2>
+                <p class="text-white/40 uppercase tracking-[0.2em] text-[10px] mt-2">AgregÃ¡ o editÃ¡ tus artÃ­culos del blog</p>
+            </div>
+            <button onclick="toggleModal()" class="bg-green-500 text-black px-10 py-5 rounded-xl font-black uppercase tracking-widest text-xs hover:bg-white transition-all shadow-[0_20px_50px_-10px_rgba(34,197,94,0.3)]">
+                + Nuevo Post
+            </button>
+        </div>
+
+        <!-- Post List -->
+        <div id="postsList" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- DinÃ¡mico -->
+        </div>
+    </main>
+
+    <!-- Modal Form -->
+    <div id="modal" class="fixed inset-0 bg-black/90 z-[100] flex items-center justify-center p-6 hidden backdrop-blur-sm">
+        <div class="glass w-full max-w-2xl p-10 rounded-[3rem] shadow-2xl relative">
+            <button onclick="toggleModal()" class="absolute top-8 right-8 text-white/40 hover:text-white transition-all">
+                 <span class="material-symbols-outlined">close</span>
+            </button>
+            <h3 id="modalTitle" class="text-3xl font-black uppercase italic mb-8">Crear ArtÃ­culo</h3>
+            <form id="postForm" class="space-y-6">
+                <input type="hidden" id="postId">
+                <div class="grid grid-cols-2 gap-6">
+                     <div>
+                        <label class="block text-[10px] font-black uppercase tracking-widest text-white/40 mb-2">TÃ­tulo</label>
+                        <input type="text" id="title" required class="w-full bg-white/5 border border-white/10 p-4 rounded-xl outline-none focus:border-green-500 transition-all">
+                    </div>
+                    <div>
+                        <label class="block text-[10px] font-black uppercase tracking-widest text-white/40 mb-2">CategorÃ­a</label>
+                        <select id="category" class="w-full bg-white/5 border border-white/10 p-4 rounded-xl outline-none focus:border-green-500 transition-all text-white/50">
+                             <option value="Equipamiento">Equipamiento</option>
+                             <option value="NutriciÃ³n">NutriciÃ³n</option>
+                             <option value="Entrenamiento">Entrenamiento</option>
+                             <option value="Biohacking">Biohacking</option>
+                        </select>
+                    </div>
+                </div>
+                <div>
+                     <label class="block text-[10px] font-black uppercase tracking-widest text-white/40 mb-2">Imagen (URL)</label>
+                     <input type="url" id="image" class="w-full bg-white/5 border border-white/10 p-4 rounded-xl outline-none focus:border-green-500 transition-all">
+                </div>
+                <div>
+                    <label class="block text-[10px] font-black uppercase tracking-widest text-white/40 mb-2">Contenido (Markdown)</label>
+                    <textarea id="content" required rows="6" class="w-full bg-white/5 border border-white/10 p-4 rounded-xl outline-none focus:border-green-500 transition-all font-sans text-sm"></textarea>
+                </div>
+                <button type="submit" class="w-full bg-green-500 text-black p-5 rounded-2xl font-black uppercase tracking-widest text-xs hover:bg-white transition-all shadow-[0_20px_50px_-10px_rgba(34,197,94,0.3)]">
+                    Guardar Cambios
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        async function fetchPosts() {
+            const res = await fetch('/api/posts');
+            const posts = await res.json();
+            const list = document.getElementById('postsList');
+            list.innerHTML = posts.map(p => `
+                <div class="glass p-8 rounded-[2rem] flex flex-col h-full relative group">
+                    <div class="aspect-video rounded-xl overflow-hidden mb-6 border border-white/5 bg-white/5">
+                        <img src="${p.images?.[0] || 'https://placehold.co/600x400/0a0a0a/333?text=NO+IMAGE'}" class="w-full h-full object-cover grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500">
+                    </div>
+                    <span class="text-green-500 text-[10px] font-black uppercase tracking-widest mb-4">${p.category}</span>
+                    <h3 class="text-2xl font-black uppercase tracking-tighter mb-4">${p.title}</h3>
+                    <div class="mt-auto pt-6 flex justify-between items-center border-t border-white/5">
+                        <span class="text-[10px] text-white/20 uppercase tracking-widest">Por ${p.username}</span>
+                        <div class="flex gap-4">
+                            <button onclick='editPost(${JSON.stringify(p)})' class="text-white/40 hover:text-green-500 transition-all"><span class="material-symbols-outlined text-sm">edit</span></button>
+                            <button onclick="deletePost(${p.id})" class="text-white/40 hover:text-red-500 transition-all"><span class="material-symbols-outlined text-sm">delete</span></button>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function toggleModal() {
+            const modal = document.getElementById('modal');
+            modal.classList.toggle('hidden');
+            if(modal.classList.contains('hidden')) {
+                document.getElementById('postForm').reset();
+                document.getElementById('postId').value = '';
+                document.getElementById('modalTitle').innerText = 'Crear ArtÃ­culo';
+            }
+        }
+
+        function editPost(p) {
+            document.getElementById('postId').value = p.id;
+            document.getElementById('title').value = p.title;
+            document.getElementById('category').value = p.category;
+            document.getElementById('image').value = p.images?.[0] || '';
+            document.getElementById('content').value = p.content;
+            document.getElementById('modalTitle').innerText = 'Editar ArtÃ­culo';
+            toggleModal();
+        }
+
+        document.getElementById('postForm').onsubmit = async (e) => {
+            e.preventDefault();
+            const id = document.getElementById('postId').value;
+            const body = {
+                title: document.getElementById('title').value,
+                category: document.getElementById('category').value,
+                images: [document.getElementById('image').value],
+                content: document.getElementById('content').value
+            };
+            
+            const url = id ? `/api/posts/${id}` : '/api/posts';
+            const method = id ? 'PUT' : 'POST';
+            
+            const res = await fetch(url, {
+                method,
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(body)
+            });
+            
+            if (res.ok) {
+                toggleModal();
+                fetchPosts();
+            } else {
+                const data = await res.json();
+                alert(data.error);
+            }
+        };
+
+        async function deletePost(id) {
+            if(!confirm('Ã‚Â¿Seguro borracho? No hay vuelta atrÃ¡s.')) return;
+            const res = await fetch(`/api/posts/${id}`, { method: 'DELETE' });
+            if (res.ok) fetchPosts();
+            else {
+                const data = await res.json();
+                alert(data.error);
+            }
+        }
+
+        async function logout() {
+            await fetch('/api/logout', { method: 'POST' });
+            window.location.href = 'login.html';
+        }
+
+        fetchPosts();
+    </script>
+</body>
+</html>

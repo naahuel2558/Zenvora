@@ -1,0 +1,47 @@
+﻿[
+  {
+    "id": "1",
+    "url": "https://www.mercadolibre.com.ar/masajeador-cervical-electrico-portatil-inalambrico-bateria-recargable-usb-femmto-relajacion-cuello-espalda-lumbar/p/MLA24127896",
+    "title": "Masajeador Cervical y Espalda Femmto Pro",
+    "price": "$32.000",
+    "category": "Bienestar",
+    "image": "https://http2.mlstatic.com/D_NQ_NP_726059-MLA48644686411_122021-O.webp",
+    "description": "Alivio inmediato para tensiones en el cuello y hombros. Calor infrarrojo."
+  },
+  {
+    "id": "2",
+    "url": "https://www.mercadolibre.com.ar/creatina-monohidratada-star-nutrition-300-gr-doypack-sin-sabor/p/MLA36978779",
+    "title": "Creatina Star Nutrition 300g Doypack",
+    "price": "$29.250",
+    "category": "Suplementos",
+    "image": "https://http2.mlstatic.com/D_NQ_NP_944321-MLA45115291845_032021-O.webp",
+    "description": "Potencia tu fuerza y recuperaciÃ³n. El suplemento mÃ¡s estudiado del mundo."
+  },
+  {
+    "id": "3",
+    "url": "https://www.mercadolibre.com.ar/tensiometro-digital-de-brazo-bateria-recargable-usb-aparato-para-medir-presion-arterial-medidor-automatico-femmto/p/MLA24219646",
+    "title": "TensiÃ³metro Digital de Brazo Femmto",
+    "price": "$28.050",
+    "category": "Salud",
+    "image": "https://http2.mlstatic.com/D_NQ_NP_608149-MLU74291845115_012024-O.webp",
+    "description": "Control preciso de tu presiÃ³n arterial. Memoria para dos usuarios."
+  },
+  {
+    "id": "4",
+    "url": "https://www.mercadolibre.com.ar/balanza-digital-con-bluetooth-femmto-bcs13-para-bano-medidor-de-grasa-corporal-y-masa-muscular/p/MLA19757620",
+    "title": "Balanza Digital Bluetooth Femmto Bcs13",
+    "price": "$39.999",
+    "category": "Fitness",
+    "image": "https://http2.mlstatic.com/D_NQ_NP_850116-MLA72803874317_112023-O.webp",
+    "description": "MedÃ­ grasa corporal, mÃºsculo y mÃ¡s. Sincroniza con tu celular."
+  },
+  {
+    "id": "5",
+    "url": "https://articulo.mercadolibre.com.ar/MLA-1477107619-combo-x2-almohadas-viscoelastica-inteligentes-60x35-negra-_JM",
+    "title": "Combo x2 Almohadas ViscoelÃ¡sticas Elite",
+    "price": "$31.348",
+    "category": "Bienestar",
+    "image": "https://http2.mlstatic.com/D_NQ_NP_903332-MLU72641031383_112023-O.webp",
+    "description": "Descanso reparador. Espuma con memoria que cuida tu postura."
+  }
+]

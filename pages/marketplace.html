@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html class="dark" lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZENVORA | Marketplace</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: { 
+                extend: { 
+                    colors: { "primary": "#39ff14", "background": "#131313", "surface": "#0A0A0A" },
+                    fontFamily: { 'space': ['Space Grotesk', 'sans-serif'], 'inter': ['Inter', 'sans-serif'] }
+                } 
+            }
+        }
+    </script>
+    <style>
+        .filter-btn.active { border-color: #39ff14; color: #39ff14; }
+    </style>
+</head>
+<body class="bg-background text-white min-h-screen flex flex-col font-inter">
+    <div id="navbar-container"></div>
+
+    <main class="flex-grow pt-20">
+        <section class="py-20 px-10">
+            <div class="container mx-auto">
+                <header class="mb-16">
+                    <span class="text-primary font-black uppercase tracking-[0.3em] text-xs mb-2 block">EQUIPAMIENTO ELITE</span>
+                    <h1 class="font-space text-6xl font-black uppercase tracking-tighter italic">MARKETPLACE</h1>
+                    <!-- Search Bar -->
+                    <div class="mt-8 flex items-center gap-6">
+                        <div class="relative flex-grow max-w-xl">
+                            <input 
+                                id="search-input" 
+                                type="text" 
+                                placeholder="Buscar producto..." 
+                                class="w-full bg-surface border border-white/10 text-white px-6 py-4 rounded-full text-sm font-inter placeholder-white/30 focus:outline-none focus:border-primary transition-all"
+                            >
+                            <svg class="absolute right-5 top-1/2 -translate-y-1/2 w-5 h-5 text-white/30 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                            </svg>
+                        </div>
+                        <span id="results-count" class="text-white/30 text-[10px] font-black uppercase tracking-widest whitespace-nowrap"></span>
+                    </div>
+                </header>
+
+                <!-- Filtros (dinámico desde JS) -->
+                <div id="categories-container" class="flex flex-wrap gap-4 mb-20"></div>
+
+                <div id="products-grid" class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8"></div>
+                <div id="empty-state" class="hidden text-center py-20">
+                    <p class="text-white/20 text-xl font-space uppercase tracking-widest">No se encontraron productos.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-black py-20 border-t border-white/5 px-10 text-center">
+        <p class="text-white/20 text-[10px] uppercase font-black tracking-widest">© 2026 ZENVORA. Laburo de Elite.</p>
+    </footer>
+
+    <script type="module">
+        import { renderNavbar } from '../components/renderNavbar.js';
+        renderNavbar('arsenal');
+        import '../scripts/marketplace.js';
+    </script>
+</body>
+</html>

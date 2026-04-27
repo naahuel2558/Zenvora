@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZENVORA | Login</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space Grotesk:wght@400;700&family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#39ff14',
+                        background: '#0a0a0a',
+                        surface: '#121212'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Space Grotesk', sans-serif; }
+        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.05); }
+        .neon-glow { box-shadow: 0 0 20px rgba(57, 255, 20, 0.2); }
+    </style>
+</head>
+<body class="bg-background text-white min-h-screen flex items-center justify-center p-6">
+    <div class="glass w-full max-w-md p-10 rounded-[2.5rem] shadow-2xl relative overflow-hidden">
+        <div class="absolute -top-20 -left-20 w-40 h-40 bg-primary/10 rounded-full blur-3xl"></div>
+
+        <div class="relative z-10 text-center mb-12">
+            <h1 class="text-4xl font-black uppercase italic tracking-tighter mb-2">Power<span class="text-primary">house</span></h1>
+            <p class="text-white/40 uppercase tracking-[0.3em] text-[10px] font-bold">IniciÃ¡ sesiÃ³n en el arsenal</p>
+        </div>
+
+        <form id="loginForm" class="space-y-6 relative z-10">
+            <div>
+                <label class="block text-[10px] font-black uppercase tracking-widest text-white/30 mb-2">Email</label>
+                <input type="email" id="email" required class="w-full bg-white/5 border border-white/10 p-4 rounded-2xl outline-none focus:border-primary/50 transition-all font-sans">
+            </div>
+            <div>
+                <label class="block text-[10px] font-black uppercase tracking-widest text-white/30 mb-2">Password</label>
+                <input type="password" id="password" required class="w-full bg-white/5 border border-white/10 p-4 rounded-2xl outline-none focus:border-primary/50 transition-all font-sans">
+            </div>
+            
+            <button type="submit" class="w-full bg-primary text-black p-5 rounded-2xl font-black uppercase tracking-widest text-sm hover:bg-white transition-all transform active:scale-95 neon-glow mt-8">
+                Acceder
+            </button>
+        </form>
+
+        <p class="mt-8 text-center text-[11px] text-white/20 uppercase tracking-widest font-bold">
+            Ã‚Â¿Nuevo por acÃ¡? <a href="register.html" class="text-primary font-black hover:underline">Registrate</a>
+        </p>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').onsubmit = async (e) => {
+            e.preventDefault();
+            const res = await fetch('/login', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email: email.value, password: password.value })
+            });
+            const data = await res.json();
+            if (res.ok) {
+                // Guardamos la sesiÃ³n simple en localStorage para la demo
+                localStorage.setItem('userId', data.userId);
+                localStorage.setItem('username', data.username);
+                window.location.href = 'profile.html';
+            } else {
+                alert('ERROR: ' + data.error);
+            }
+        };
+    </script>
+</body>
+</html>

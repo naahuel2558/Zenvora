@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html class="dark" lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZENVORA | Crear Post</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: { 
+                extend: { 
+                    colors: { "primary": "#39ff14", "background": "#131313", "surface": "#0A0A0A" },
+                    fontFamily: { 'space': ['Space Grotesk', 'sans-serif'], 'inter': ['Inter', 'sans-serif'] }
+                } 
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-white min-h-screen flex flex-col font-inter">
+    <div id="navbar-container"></div>
+
+    <main class="flex-grow p-10">
+        <div class="max-w-4xl mx-auto bg-surface border border-white/5 p-12 rounded-3xl shadow-2xl">
+            <header class="mb-12">
+                <h1 class="font-space text-4xl font-black uppercase tracking-tighter mb-2 italic">CREAR NUEVO ARTÍCULO</h1>
+                <p class="text-white/40 text-xs uppercase tracking-widest">Compartí conocimiento de elite con la comunidad Zenvora</p>
+            </header>
+            
+            <form id="postForm" class="space-y-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <label class="block text-[10px] uppercase font-black tracking-widest text-white/40 mb-2">Título del Post</label>
+                        <input type="text" name="title" required class="w-full bg-black border border-white/10 rounded-xl px-6 py-4 text-white focus:border-primary transition-all outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-[10px] uppercase font-black tracking-widest text-white/40 mb-2">Categoría</label>
+                        <select name="category" class="w-full bg-black border border-white/10 rounded-xl px-6 py-4 text-white focus:border-primary transition-all outline-none">
+                            <option value="Biohacking">Biohacking</option>
+                            <option value="Nutrición">Nutrición</option>
+                            <option value="Entrenamiento">Entrenamiento</option>
+                            <option value="Mindset">Mindset</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-[10px] uppercase font-black tracking-widest text-white/40 mb-2">URL de la Imagen (Unsplash, etc.)</label>
+                    <input type="url" name="image" required class="w-full bg-black border border-white/10 rounded-xl px-6 py-4 text-white focus:border-primary transition-all outline-none" placeholder="https://images.unsplash.com/photo-...">
+                </div>
+
+                <div>
+                    <label class="block text-[10px] uppercase font-black tracking-widest text-white/40 mb-2">Contenido del Artículo</label>
+                    <textarea name="content" required rows="10" class="w-full bg-black border border-white/10 rounded-xl px-6 py-4 text-white focus:border-primary transition-all outline-none resize-none"></textarea>
+                </div>
+
+                <button type="submit" class="w-full bg-primary text-black py-5 rounded-xl font-black uppercase text-sm tracking-[0.3em] hover:scale-[1.02] transition-all">PUBLICAR ARTÍCULO</button>
+            </form>
+        </div>
+    </main>
+
+    <script type="module">
+        import { renderNavbar } from '../components/renderNavbar.js';
+        renderNavbar('');
+
+        document.getElementById('postForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const user = JSON.parse(localStorage.getItem('user'));
+            if (!user) {
+                alert('Tenés que estar logueado para publicar.');
+                window.location.href = 'login.html';
+                return;
+            }
+
+            const formData = new FormData(e.target);
+            const rawData = Object.fromEntries(formData);
+            
+            const postData = {
+                userId: user.id,
+                username: user.username,
+                title: rawData.title,
+                content: rawData.content,
+                category: rawData.category,
+                images: [rawData.image],
+                createdAt: new Date().toISOString()
+            };
+
+            try {
+                const res = await fetch('/api/posts', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(postData)
+                });
+                if (res.ok) {
+                    alert('Post publicado con éxito.');
+                    window.location.href = 'blog.html';
+                } else {
+                    alert('Error al publicar.');
+                }
+            } catch (error) { console.error(error); }
+        });
+    </script>
+</body>
+</html>

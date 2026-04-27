@@ -1,0 +1,362 @@
+﻿<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>IRONCLAD PERFORMANCE | Elite Home Fitness</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space Grotesk:wght@400;700&family=Inter:wght@300;400;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Space Grotesk:wght@400;700&family=Inter:wght@300;400;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Space Grotesk:wght@400;700&family=Inter:wght@300;400;700&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary-fixed-dim": "#2ae500",
+                    "error": "#ffb4ab",
+                    "outline": "#85967c",
+                    "on-error": "#690005",
+                    "on-primary-fixed-variant": "#095300",
+                    "primary-fixed": "#79ff5b",
+                    "surface-container-high": "#2a2a2a",
+                    "on-secondary": "#2f3131",
+                    "on-primary-container": "#107100",
+                    "surface-container-lowest": "#0e0e0e",
+                    "background": "#131313",
+                    "on-tertiary-fixed-variant": "#474746",
+                    "inverse-surface": "#e2e2e2",
+                    "surface-container-low": "#1b1b1b",
+                    "on-background": "#e2e2e2",
+                    "on-primary-fixed": "#022100",
+                    "primary": "#efffe3",
+                    "surface-bright": "#393939",
+                    "secondary-container": "#454747",
+                    "on-tertiary": "#313030",
+                    "on-surface": "#e2e2e2",
+                    "on-surface-variant": "#baccb0",
+                    "tertiary-fixed-dim": "#c8c6c5",
+                    "surface-container": "#1f1f1f",
+                    "on-error-container": "#ffdad6",
+                    "surface-dim": "#131313",
+                    "on-tertiary-container": "#626161",
+                    "secondary-fixed": "#e2e2e2",
+                    "on-tertiary-fixed": "#1c1b1b",
+                    "on-secondary-container": "#b4b5b5",
+                    "error-container": "#93000a",
+                    "inverse-primary": "#106e00",
+                    "outline-variant": "#3c4b35",
+                    "tertiary": "#fdf9f9",
+                    "tertiary-fixed": "#e5e2e1",
+                    "tertiary-container": "#e0dddc",
+                    "secondary": "#c6c6c7",
+                    "primary-container": "#39ff14",
+                    "surface-tint": "#2ae500",
+                    "inverse-on-surface": "#303030",
+                    "surface": "#131313",
+                    "on-secondary-fixed": "#1a1c1c",
+                    "surface-container-highest": "#353535",
+                    "on-primary": "#053900",
+                    "on-secondary-fixed-variant": "#454747",
+                    "surface-variant": "#353535",
+                    "secondary-fixed-dim": "#c6c6c7"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xl": "128px",
+                    "xs": "8px",
+                    "sm": "16px",
+                    "md": "32px",
+                    "unit": "4px",
+                    "lg": "64px",
+                    "gutter": "24px",
+                    "margin": "40px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Space Grotesk"],
+                    "display-xl": ["Space Grotesk"],
+                    "label-bold": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "body-md": ["Inter"],
+                    "headline-lg": ["Space Grotesk"]
+            },
+            "fontSize": {
+                    "headline-md": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "display-xl": ["72px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "700"}],
+                    "label-bold": ["14px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400"}],
+                    "headline-lg": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.06);
+            backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .neon-border-bottom {
+            border-bottom: 2px solid #39FF14;
+        }
+    </style>
+</head>
+<body class="bg-black text-white font-body-md selection:bg-primary-container selection:text-black">
+<!-- TopAppBar from JSON -->
+<header class="fixed top-0 w-full z-50 rounded-none border-b border-white/10 bg-black/80 backdrop-blur-lg">
+<nav class="flex justify-between items-center w-full px-10 py-6 mx-auto">
+<div class="text-2xl font-black text-white italic tracking-tighter uppercase font-headline-md">IRONCLAD</div>
+<div class="hidden md:flex gap-10">
+<a class="text-[#39FF14] border-b-2 border-[#39FF14] pb-1 font-headline-md text-sm tracking-tighter uppercase font-bold" href="#">SHOP</a>
+<a class="text-white/70 hover:text-[#39FF14] hover:bg-white/5 transition-all font-headline-md text-sm tracking-tighter uppercase font-bold" href="#">SCIENCE</a>
+<a class="text-white/70 hover:text-[#39FF14] hover:bg-white/5 transition-all font-headline-md text-sm tracking-tighter uppercase font-bold" href="#">TRAINING</a>
+<a class="text-white/70 hover:text-[#39FF14] hover:bg-white/5 transition-all font-headline-md text-sm tracking-tighter uppercase font-bold" href="#">ABOUT</a>
+</div>
+<div class="flex items-center gap-6">
+<span class="material-symbols-outlined text-white/70 cursor-pointer hover:text-[#39FF14]" data-icon="shopping_cart">shopping_cart</span>
+<button class="bg-primary-container text-black px-6 py-2 font-headline-md text-sm font-bold tracking-tighter uppercase transition-all active:scale-95 duration-200">GET THE GEAR</button>
+</div>
+</nav>
+</header>
+<main class="pt-[88px]">
+<!-- Hero Section -->
+<section class="relative min-h-[921px] flex items-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="" class="w-full h-full object-cover opacity-60" data-alt="Intense athlete performing heavy power cleans in a moody high-end home gym with dramatic shadows and neon accents" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBnHc-q5qlsjm8kTQgC5qzjre06Qbb2bZkDeVca1UO9TEd2pUeO4H3gF5Kw037revGvxtaBL18519e_iJkw2d3klMZw-Q5kRTd5-Ef119gCEdjU3_qjTKzlRxY9NLUSuyG-g3FF4LW44MxeCfrUikf09hlhCo0CpHgrAW9rrMzEWPWq06Ms7mT_Utp1resx08y3UwuAPQy8Xttyb9gh8vYwAVxMo-2NeiV2mTmYuB6yzZy826XNEkFxNA1mM_LMDa9HbI8als2-u9M"/>
+<div class="absolute inset-0 bg-gradient-to-r from-black via-black/40 to-transparent"></div>
+</div>
+<div class="container mx-auto px-10 relative z-10">
+<div class="max-w-3xl">
+<h1 class="font-display-xl text-display-xl uppercase mb-6 leading-none">ELITE FITNESS,<br/><span class="text-primary-container">NO GYM REQUIRED</span></h1>
+<p class="font-body-lg text-body-lg text-white/70 mb-10 max-w-xl">Transform your living space into a professional-grade training facility. No compromises. No excuses. Just elite performance gear engineered for results.</p>
+<div class="flex flex-col sm:flex-row gap-4">
+<button class="bg-primary-container text-black px-10 py-5 font-headline-md text-lg font-black uppercase tracking-tighter active:scale-95 transition-transform">SHOP THE GEAR</button>
+<button class="border border-white text-white px-10 py-5 font-headline-md text-lg font-black uppercase tracking-tighter hover:bg-white hover:text-black transition-all">VIEW SCIENCE</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Problem Section -->
+<section class="py-lg bg-surface">
+<div class="container mx-auto px-10">
+<div class="text-center mb-xl">
+<h2 class="font-headline-lg text-headline-lg uppercase mb-4">WHY MOST HOME WORKOUTS FAIL</h2>
+<div class="w-24 h-1 bg-primary-container mx-auto"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<div class="glass-card p-10 text-center border-t-2 border-t-white/20">
+<span class="material-symbols-outlined text-primary-container text-5xl mb-6" data-icon="fitness_center">fitness_center</span>
+<h3 class="font-headline-md text-headline-md uppercase mb-4 text-white">LACK OF LOAD</h3>
+<p class="text-white/60">Bodyweight training hits a plateau. You need variable resistance to force muscle adaptation and elite growth.</p>
+</div>
+<div class="glass-card p-10 text-center border-t-2 border-t-white/20">
+<span class="material-symbols-outlined text-primary-container text-5xl mb-6" data-icon="space_dashboard">space_dashboard</span>
+<h3 class="font-headline-md text-headline-md uppercase mb-4 text-white">CLUTTERED SPACE</h3>
+<p class="text-white/60">Traditional gyms eat your floor plan. You need a compact solution that delivers 1,000 lbs of potential in 2 sq ft.</p>
+</div>
+<div class="glass-card p-10 text-center border-t-2 border-t-white/20">
+<span class="material-symbols-outlined text-primary-container text-5xl mb-6" data-icon="psychology">psychology</span>
+<h3 class="font-headline-md text-headline-md uppercase mb-4 text-white">LOW INTENSITY</h3>
+<p class="text-white/60">Without data and variety, motivation dies. We integrate performance tracking to keep your intensity at professional levels.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Product Showcase (Bento Style) -->
+<section class="py-lg bg-black">
+<div class="container mx-auto px-10">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+<div class="lg:col-span-7 relative bg-surface-container-low overflow-hidden min-h-[500px] flex items-center justify-center border border-white/5">
+<img alt="" class="w-full h-full object-cover" data-alt="Close up of a sleek, matte black carbon fiber portable gym base with neon green Inter components and tension cables" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWOLyJtxMVuRvuJ_Ns6jsp3ljm8ORUnebYqL7wnwbboP2CiCDbS8uQ-GG5_1CYom98VqYxeUekha0NTPrGD3-5wfGDyRrXkaV95VeUXRZmkZYGUH_0YrFyEtonrU7i2OaFPutkDFYjd2iKEyApJE22naYvjd4VEjwNUWxSunvFCR-U5bTU_JNzwSBfR2PP01rJ-999HFQsq1i03s7PUFZHVyqQwIyTWS2d_QspRXoERNZuzBtCrjJ8HKok1UiRjyoDcyjYoyP_I5Q"/>
+<div class="absolute top-10 left-10 glass-card px-6 py-3">
+<span class="text-primary-container font-headline-md text-xl font-bold italic">V2.0 PRO SERIES</span>
+</div>
+</div>
+<div class="lg:col-span-5 flex flex-col justify-center space-y-8">
+<h2 class="font-headline-lg text-headline-lg uppercase leading-tight">THE IRONCLAD<br/>PORTABLE GYM</h2>
+<p class="font-body-lg text-body-lg text-white/70 italic">Engineered for the 1%. This isn't a resistance band kit. It's a high-tension, digital-integration ZENVORA.</p>
+<ul class="space-y-4">
+<li class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary-container" data-icon="check_circle" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-headline-md uppercase text-lg">Up to 350lbs of Dynamic Resistance</span>
+</li>
+<li class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary-container" data-icon="check_circle" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-headline-md uppercase text-lg">Aerospace-Grade Carbon Fiber Base</span>
+</li>
+<li class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary-container" data-icon="check_circle" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-headline-md uppercase text-lg">Bluetooth Performance Analytics</span>
+</li>
+<li class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary-container" data-icon="check_circle" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-headline-md uppercase text-lg">Folds to 4 Inches Thin</span>
+</li>
+</ul>
+<button class="bg-primary-container text-black w-full py-6 font-headline-md text-xl font-black uppercase tracking-tighter active:scale-95 transition-transform">ADD TO CART Ã¢â‚¬â€ $899</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Benefits Grid -->
+<section class="py-lg bg-surface">
+<div class="container mx-auto px-10">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<div class="p-8 border border-white/10 hover:border-primary-container transition-colors">
+<span class="material-symbols-outlined text-white text-4xl mb-6" data-icon="public">public</span>
+<h4 class="font-headline-md text-xl uppercase mb-2">ANYWHERE ACCESS</h4>
+<p class="text-white/50 text-sm">Hotel, office, or beach. Your gym travels as fast as you do.</p>
+</div>
+<div class="p-8 border border-white/10 hover:border-primary-container transition-colors">
+<span class="material-symbols-outlined text-white text-4xl mb-6" data-icon="bolt">bolt</span>
+<h4 class="font-headline-md text-xl uppercase mb-2">FULL BODY BLAST</h4>
+<p class="text-white/50 text-sm">300+ exercises programmed for total muscular recruitment.</p>
+</div>
+<div class="p-8 border border-white/10 hover:border-primary-container transition-colors">
+<span class="material-symbols-outlined text-white text-4xl mb-6" data-icon="schedule">schedule</span>
+<h4 class="font-headline-md text-xl uppercase mb-2">SAVE 10+ HOURS</h4>
+<p class="text-white/50 text-sm">Eliminate the commute. High intensity 20-min sessions for the busy elite.</p>
+</div>
+<div class="p-8 border border-white/10 hover:border-primary-container transition-colors">
+<span class="material-symbols-outlined text-white text-4xl mb-6" data-icon="biotech">biotech</span>
+<h4 class="font-headline-md text-xl uppercase mb-2">SCIENCE-BACKED</h4>
+<p class="text-white/50 text-sm">Engineered by kinesiologists to optimize the force curve.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Social Proof (UGC & Reviews) -->
+<section class="py-lg bg-black">
+<div class="container mx-auto px-10">
+<div class="flex flex-col md:flex-row justify-between items-end mb-xl gap-6">
+<div>
+<h2 class="font-headline-lg text-headline-lg uppercase">JOIN THE 50,000+ STRONG</h2>
+<div class="flex items-center gap-2 mt-4 text-primary-container">
+<span class="material-symbols-outlined" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-white font-label-bold ml-2">4.9/5 RATING</span>
+</div>
+</div>
+<p class="font-body-lg text-white/50 max-w-sm italic">"The only home gym that actually matches the intensity of my old powerlifting club." Ã¢â‚¬â€ Marcus V.</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+<img alt="" class="aspect-square object-cover border border-white/10" data-alt="User in a modern minimalist apartment using the Ironclad system for deep squats, natural window lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5ww0GpCM9B1TbFHc6GJAPfIOIfUgFycf--AEdE23vs35mt8uQ_y4RplomdRjqJFVEh-l1x62CylpDCoWwXBrXkCqX60uybM0UMYcWZXrJ2EXIkvQL1sjpkeEmobIAfdkA_6XfW_SMH5DIksI0JA7OiJpSCg9tHAJzwGUFd7nLo99gsn8PK81vwmz8ER3ikKxV-cnesoPto-HODpoHPdwrYx17f_Jl5C5n670xbtcsDUN2L4vxHJHDTFwtqAfqIZ63Q3rCp7abWL8"/>
+<img alt="" class="aspect-square object-cover border border-white/10" data-alt="Athletic man doing overhead press with portable gym in a hotel room, high contrast black and white style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjvp1LZ9WtFYSoXPR_eiiEgtp6rgSKqFXxnQcXQOw9icRt12Y7OE_6x9guC5FVXpWwA7LC4vlyCcVQ-gzKeP6gmXtwkB5b5MIU2guaGIU79BUelEKNz21Pkel5viKsNJTUD9la51ckU9bV0v3BeFcVZfaAUOCq5hKIREtDCe7GHaQTN9AKdvfyDDWeEv4tLotXFvHuTTUODOrJAfB3GOH4t99Anfws0cEv6zOtd_2s_5ERLMn6Sg5cG9fi7QFoQyVhk8zHKCEFX54"/>
+<img alt="" class="aspect-square object-cover border border-white/10" data-alt="Fit woman using resistance handles for rowing exercise in a sleek home office setup" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOMlx5SztpZ4O-11Rs2sr89B48SmzurU0hfZETbLPJij0e_uPOPNSGYcCTgxu5Tn31gkaokzX72gzD7HIvIMRFPeef6wS86XhSAtfEOK64UJ3oiBh8NilC57i-equRwMJbET5HoCqXPxZM5FsD5VQ9fjNg8xLbqgDY1q1bgNc5w0-z9phmLD2Cm8X0N9t4K18_N1oEcdUL77xwDiUrurS6OBEKxCmXSEavX8aq9gcdnVmnOALVZyvO7j3qosDWEQWQ-5N0V3YmoDs"/>
+<img alt="" class="aspect-square object-cover border border-white/10" data-alt="Close up of a person's hands gripping a heavy-duty knurled handle of the Ironclad gym" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCAPLHCyzGfvTXId7yN0o-yR203McCBS1G5MSPtaCA1_fHW5btiFOubDmk8TNPmn4G1PCF8HjGBCgITeGmHjtaOtsx8GIFKMWDQ70Ex6H7k_-eA6Jz_sJdw5udPYThjOhHBmFtnqxfAG7XaB5uas7OqM9IDaIoOTPcwSxWA_ZmXz1pEnpsxvME_LEW-pcltohNVZSmCyM-rbmb7Kp2Y_mgodIQY8qdWvFzEic-KuYSuW5SvZOCRz9bC2dsCrSEhkKgXjdaEV_wmriI"/>
+</div>
+</div>
+</section>
+<!-- How It Works -->
+<section class="py-lg bg-surface">
+<div class="container mx-auto px-10">
+<h2 class="font-headline-lg text-headline-lg uppercase text-center mb-xl">HOW IT WORKS</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-16 relative">
+<!-- Step 1 -->
+<div class="relative">
+<div class="text-[120px] font-black text-white/5 absolute -top-20 -left-4">01</div>
+<div class="relative z-10">
+<h3 class="font-headline-md text-headline-md uppercase mb-4 text-primary-container">UNPACK</h3>
+<p class="text-white/70">Deploy the carbon fiber base in any room. Zero assembly. Zero tools.</p>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="relative">
+<div class="text-[120px] font-black text-white/5 absolute -top-20 -left-4">02</div>
+<div class="relative z-10">
+<h3 class="font-headline-md text-headline-md uppercase mb-4 text-primary-container">CONNECT</h3>
+<p class="text-white/70">Sync with the Ironclad App. Choose your protocol: Hypertrophy, Strength, or Endure.</p>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="relative">
+<div class="text-[120px] font-black text-white/5 absolute -top-20 -left-4">03</div>
+<div class="relative z-10">
+<h3 class="font-headline-md text-headline-md uppercase mb-4 text-primary-container">SWEAT</h3>
+<p class="text-white/70">Engage the high-tension cables and push your limits. Real-time metrics track every rep.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Offer Section -->
+<section class="py-xl bg-black border-y border-white/10">
+<div class="container mx-auto px-10">
+<div class="glass-card p-12 relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-10">
+<div class="absolute -right-20 -top-20 w-64 h-64 bg-primary-container/20 rounded-full blur-[100px]"></div>
+<div class="relative z-10 text-center md:text-left">
+<div class="inline-block bg-primary-container text-black px-4 py-1 font-label-bold uppercase text-xs mb-6">LIMITED TIME OFFER</div>
+<h2 class="font-display-xl text-5xl md:text-6xl uppercase mb-4 leading-tight">20% OFF YOUR<br/>FIRST ORDER</h2>
+<div class="flex items-center justify-center md:justify-start gap-4 text-white/50 uppercase font-label-bold">
+<span class="material-symbols-outlined" data-icon="local_shipping">local_shipping</span>
+<span>FREE GLOBAL SHIPPING INCLUDED</span>
+</div>
+</div>
+<div class="relative z-10 bg-black/40 border border-white/10 p-8 text-center min-w-[300px]">
+<p class="font-label-bold uppercase text-xs tracking-widest mb-4">EXPIRES IN</p>
+<div class="flex gap-4 justify-center">
+<div>
+<span class="text-4xl font-black font-headline-md">04</span>
+<span class="block text-[10px] text-white/40 font-bold">HOURS</span>
+</div>
+<span class="text-4xl font-black text-primary-container">:</span>
+<div>
+<span class="text-4xl font-black font-headline-md">51</span>
+<span class="block text-[10px] text-white/40 font-bold">MINS</span>
+</div>
+<span class="text-4xl font-black text-primary-container">:</span>
+<div>
+<span class="text-4xl font-black font-headline-md">22</span>
+<span class="block text-[10px] text-white/40 font-bold">SECS</span>
+</div>
+</div>
+<button class="mt-8 bg-white text-black w-full py-4 font-headline-md font-black uppercase tracking-tighter hover:bg-primary-container transition-colors">CLAIM DISCOUNT</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Final CTA -->
+<section class="py-xl bg-surface relative overflow-hidden">
+<div class="container mx-auto px-10 relative z-10 text-center max-w-4xl">
+<h2 class="font-display-xl text-display-xl uppercase mb-8">READY TO TRANSFORM?</h2>
+<p class="font-body-lg text-body-lg text-white/60 mb-12">The equipment is just the tool. The results are earned. Start your journey into the elite tier of home fitness today.</p>
+<div class="flex flex-col sm:flex-row justify-center gap-6">
+<button class="bg-primary-container text-black px-12 py-6 font-headline-md text-2xl font-black uppercase tracking-tighter active:scale-95 transition-transform shadow-[0_0_50px_rgba(57,255,20,0.3)]">BUILD MY BUNDLE</button>
+</div>
+<p class="mt-10 text-white/40 font-label-bold uppercase text-xs tracking-[0.2em]">30-DAY PERFORMANCE GUARANTEE. LOVE IT OR SEND IT BACK.</p>
+</div>
+<!-- Decorative gradient element -->
+<div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-[50%] bg-gradient-to-t from-primary-container/10 to-transparent blur-3xl"></div>
+</section>
+</main>
+<!-- Footer from JSON -->
+<footer class="w-full rounded-none border-t border-white/10 bg-[#000000]">
+<div class="flex flex-col md:flex-row justify-between items-center w-full px-10 py-12 gap-8">
+<div class="text-xl font-black text-white font-headline-md">IRONCLAD</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="text-white/40 hover:text-[#39FF14] transition-colors font-['Space Grotesk'] text-[12px] tracking-widest uppercase" href="#">PRIVACY</a>
+<a class="text-white/40 hover:text-[#39FF14] transition-colors font-['Space Grotesk'] text-[12px] tracking-widest uppercase" href="#">TERMS</a>
+<a class="text-white/40 hover:text-[#39FF14] transition-colors font-['Space Grotesk'] text-[12px] tracking-widest uppercase" href="#">WARRANTY</a>
+<a class="text-white/40 hover:text-[#39FF14] transition-colors font-['Space Grotesk'] text-[12px] tracking-widest uppercase" href="#">SHIPPING</a>
+<a class="text-white/40 hover:text-[#39FF14] transition-colors font-['Space Grotesk'] text-[12px] tracking-widest uppercase" href="#">CONTACT</a>
+</div>
+<div class="text-white/40 font-['Space Grotesk'] text-[12px] tracking-widest uppercase text-center md:text-right">
+                Ã‚Â© 2024 IRONCLAD PERFORMANCE. BUILT FOR THE ELITE.
+            </div>
+</div>
+</footer>
+</body></html>

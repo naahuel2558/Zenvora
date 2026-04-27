@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html class="dark" lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZENVORA | Artículo</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: { 
+                extend: { 
+                    colors: { "primary": "#39ff14", "background": "#131313", "surface": "#0A0A0A" },
+                    fontFamily: { 'space': ['Space Grotesk', 'sans-serif'], 'inter': ['Inter', 'sans-serif'] }
+                } 
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-white min-h-screen flex flex-col font-inter">
+    <div id="navbar-container"></div>
+
+    <main class="flex-grow pt-20 px-10 pb-32">
+        <article class="max-w-4xl mx-auto">
+            <div id="post-header" class="mb-12">
+                <span id="post-category" class="text-primary font-black uppercase tracking-[0.4em] text-xs mb-4 block">CATEGORÍA</span>
+                <h1 id="post-title" class="font-space text-6xl font-black uppercase tracking-tighter mb-8 leading-none">CARGANDO...</h1>
+                <div class="flex items-center gap-4 text-white/40 text-[10px] uppercase font-black tracking-widest">
+                    <span id="post-author">POR ADMIN</span>
+                    <span class="w-1 h-1 bg-white/20 rounded-full"></span>
+                    <span id="post-date">FECHA</span>
+                </div>
+            </div>
+
+            <div id="post-image-container" class="mb-16 aspect-video rounded-3xl overflow-hidden bg-black border border-white/5 shadow-2xl">
+                <img id="post-image" src="" class="w-full h-full object-cover">
+            </div>
+
+            <div id="post-content" class="text-white/60 leading-relaxed text-lg prose prose-invert max-w-none">
+                <!-- Dinámico -->
+            </div>
+        </article>
+    </main>
+
+    <footer class="bg-black py-20 border-t border-white/5 px-10 text-center">
+        <p class="text-white/20 text-[10px] uppercase font-black tracking-widest">© 2026 ZENVORA. Laburo de Elite.</p>
+    </footer>
+
+    <script type="module">
+        import { renderNavbar } from '../components/renderNavbar.js';
+        renderNavbar('blog');
+        
+        async function loadPost() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const id = urlParams.get('id');
+            if (!id) return;
+
+            try {
+                const res = await fetch(`/api/posts/${id}`);
+                const post = await res.json();
+                
+                document.title = `ZENVORA | ${post.title}`;
+                document.getElementById('post-category').textContent = post.category;
+                document.getElementById('post-title').textContent = post.title;
+                document.getElementById('post-author').textContent = `POR ${post.username}`;
+                document.getElementById('post-date').textContent = new Date(post.createdAt).toLocaleDateString('es-ES');
+                document.getElementById('post-image').src = post.images[0];
+                document.getElementById('post-content').innerHTML = post.content.split('\n').map(p => `<p class="mb-6">${p}</p>`).join('');
+            } catch (e) { console.error(e); }
+        }
+        loadPost();
+    </script>
+</body>
+</html>

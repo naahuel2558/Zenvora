@@ -1,0 +1,19 @@
+﻿{
+  "category": "Crossfit",
+  "products": [
+    {
+      "name": "Barra OlÃ­mpica 20kg Professional",
+      "description": "Acero de alta resistencia con rodamientos para levantamiento libre.",
+      "price": "$120.000 - $180.000 ARS",
+      "link": "https://mercadolibre.com.ar/example-affiliate-link-1",
+      "trend": "Crecimiento del 25% en bÃºsquedas locales este mes."
+    },
+    {
+      "name": "CajÃ³n PliomÃ©trico 3 en 1",
+      "description": "Madera reforzada, tres alturas ajustables para saltos.",
+      "price": "$45.000 - $60.000 ARS",
+      "link": "https://mercadolibre.com.ar/example-affiliate-link-2",
+      "trend": "Producto ideal para 'Home Gym' en departamentos."
+    }
+  ]
+}

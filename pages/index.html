@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html class="dark" lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZENVORA | Dominación Total</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: { 
+                extend: { 
+                    colors: { "primary": "#39ff14", "background": "#131313", "surface": "#0A0A0A" },
+                    fontFamily: { 'space': ['Space Grotesk', 'sans-serif'], 'inter': ['Inter', 'sans-serif'] }
+                } 
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-white min-h-screen flex flex-col font-inter">
+    <div id="navbar-container"></div>
+
+    <main class="flex-grow">
+        <!-- Hero -->
+        <section class="relative min-h-screen flex items-center overflow-hidden">
+            <div class="absolute inset-0 z-0">
+                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBnHc-q5qlsjm8kTQgC5qzjre06Qbb2bZkDeVca1UO9TEd2pUeO4H3gF5Kw037revGvxtaBL18519e_iJkw2d3klMZw-Q5kRTd5-Ef119gCEdjU3_qjTKzlRxY9NLUSuyG-g3FF4LW44MxeCfrUikf09hlhCo0CpHgrAW9rrMzEWPWq06Ms7mT_Utp1resx08y3UwuAPQy8Xttyb9gh8vYwAVxMo-2NeiV2mTmYuB6yzZy826XNEkFxNA1mM_LMDa9HbI8als2-u9M" class="w-full h-full object-cover opacity-30">
+            </div>
+            <div class="container mx-auto px-10 relative z-10">
+                <h1 class="font-space text-[10vw] font-black uppercase leading-[0.8] italic tracking-tighter mb-8">DOMINACIÓN <br> <span class="text-primary italic">TOTAL</span></h1>
+                <p class="max-w-xl text-white/50 text-xl uppercase tracking-widest mb-10">Equipamiento fitness para el atleta que no acepta excusas.</p>
+                <div class="flex gap-6">
+                    <a href="marketplace.html" class="bg-white text-black px-12 py-5 font-black uppercase text-sm tracking-widest hover:bg-primary transition-all">VER MARKETPLACE</a>
+                    <a href="blog.html" class="border border-white/20 px-12 py-5 font-black uppercase text-sm tracking-widest hover:border-primary transition-all">LEER BLOG</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Arsenal Destacado -->
+        <section id="arsenal-destacado" class="py-32 px-10 bg-black">
+            <div class="container mx-auto">
+                <div class="flex justify-between items-end mb-16">
+                    <div>
+                        <span class="text-primary font-black uppercase tracking-[0.3em] text-xs mb-2 block">EL ARSENAL</span>
+                        <h2 class="font-space text-4xl font-black uppercase tracking-tighter italic">EQUIPAMIENTO DESTACADO</h2>
+                    </div>
+                    <a href="marketplace.html" class="text-white/40 hover:text-primary text-xs font-black uppercase tracking-widest transition-all underline decoration-primary/30">VER TODO EL MARKETPLACE</a>
+                </div>
+                <div id="featured-products" class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                    <!-- Dinámico -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Artículos Destacados -->
+        <section class="py-32 px-10 bg-surface">
+            <div class="container mx-auto">
+                <div class="flex justify-between items-end mb-16">
+                    <div>
+                        <span class="text-primary font-black uppercase tracking-[0.3em] text-xs mb-2 block">CONOCIMIENTO ES PODER</span>
+                        <h2 class="font-space text-4xl font-black uppercase tracking-tighter italic">ARTÍCULOS RECIENTES</h2>
+                    </div>
+                    <a href="blog.html" class="text-white/40 hover:text-primary text-xs font-black uppercase tracking-widest transition-all underline decoration-primary/30">VER TODO EL BLOG</a>
+                </div>
+                <div id="articles-grid" class="grid grid-cols-1 md:grid-cols-3 gap-10"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-black py-20 border-t border-white/5 px-10">
+        <div class="container mx-auto flex flex-col md:flex-row justify-between items-center gap-10">
+            <span class="font-space text-4xl font-black text-white/20 italic">ZENVORA</span>
+            <div class="flex gap-10 text-white/40 text-[10px] uppercase font-black tracking-widest">
+                <a href="index.html" class="hover:text-primary">Inicio</a>
+                <a href="marketplace.html" class="hover:text-primary">Marketplace</a>
+                <a href="blog.html" class="hover:text-primary">Blog</a>
+            </div>
+            <p class="text-white/20 text-[10px] uppercase font-black tracking-widest">© 2026 ZENVORA. Laburo de Elite.</p>
+        </div>
+    </footer>
+
+    <script type="module">
+        import { renderNavbar } from '../components/renderNavbar.js';
+        renderNavbar('inicio');
+
+        async function loadHomeContent() {
+            try {
+                // Cargar Productos
+                const pRes = await fetch('/api/products');
+                const products = await pRes.json();
+                const pGrid = document.getElementById('featured-products');
+                pGrid.innerHTML = products.slice(0, 4).map(p => `
+                    <div onclick="window.location.href='articulo.html?id=${p.id}'" class="group cursor-pointer bg-surface border border-white/5 p-4 rounded-3xl hover:border-primary/50 transition-all">
+                        <div class="aspect-square rounded-2xl overflow-hidden bg-black mb-6">
+                            <img src="${p.image}" class="w-full h-full object-contain p-4 group-hover:scale-110 transition-all">
+                        </div>
+                        <h3 class="font-space text-lg font-black uppercase tracking-tighter mb-2 line-clamp-1">${p.title}</h3>
+                        <span class="text-primary font-black text-xl">${p.price}</span>
+                    </div>
+                `).join('');
+
+                // Cargar Artículos
+                const aRes = await fetch('/api/posts');
+                const posts = await aRes.json();
+                const aGrid = document.getElementById('articles-grid');
+                aGrid.innerHTML = posts.slice(0, 3).map(post => `
+                    <article onclick="window.location.href='post.html?id=${post.id}'" class="group cursor-pointer">
+                        <div class="relative aspect-video rounded-3xl overflow-hidden mb-6 border border-white/5 bg-black">
+                            <img src="${post.images[0]}" class="w-full h-full object-cover opacity-50 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700">
+                        </div>
+                        <h3 class="font-space text-xl font-black uppercase tracking-tighter mb-4 group-hover:text-primary transition-all">${post.title}</h3>
+                        <p class="text-white/40 text-sm line-clamp-2">${post.content}</p>
+                    </article>
+                `).join('');
+            } catch (e) { console.error(e); }
+        }
+        loadHomeContent();
+    </script>
+</body>
+</html>

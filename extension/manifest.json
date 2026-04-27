@@ -1,0 +1,24 @@
+﻿{
+  "manifest_version": 3,
+  "name": "Fitnees Ninja Collector",
+  "version": "1.3",
+  "description": "Caza links de afiliados de Mercado Libre sin preguntar. Modo todo terreno.",
+  "permissions": ["storage", "notifications", "clipboardRead"],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.mercadolibre.com.ar/*", "*://*.meli.la/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "icons": {
+    "16": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
+  }
+}

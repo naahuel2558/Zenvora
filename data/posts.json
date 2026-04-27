@@ -1,0 +1,38 @@
+[
+  {
+    "id": "1",
+    "userId": "1714151234567",
+    "username": "ZENVORA_Coach",
+    "title": "Biohacking 101: Optimización Biológica",
+    "content": "El biohacking se trata de tomar el control de tu propia biología. Desde la exposición al frío hasta el ayuno intermitente, exploramos las técnicas que realmente funcionan para duplicar tu energía y enfoque.",
+    "category": "Biohacking",
+    "images": [
+      "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=1000&auto=format&fit=crop"
+    ],
+    "createdAt": "2026-04-26T12:00:00.000Z"
+  },
+  {
+    "id": "2",
+    "userId": "1714151234567",
+    "username": "ZENVORA_Coach",
+    "title": "Suplementación de Elite: Creatina y Proteína",
+    "content": "No tires tu plata. La creatina monohidratada y la proteína de suero son los pilares de cualquier transformación física seria. Analizamos las dosis correctas y el timing perfecto para maximizar ganancias.",
+    "category": "Nutrición",
+    "images": [
+      "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=1000&auto=format&fit=crop"
+    ],
+    "createdAt": "2026-04-26T14:30:00.000Z"
+  },
+  {
+    "id": "3",
+    "userId": "1714151234567",
+    "username": "ZENVORA_Coach",
+    "title": "Home Gym: Tu Templo de Entrenamiento",
+    "content": "Armar un gimnasio en casa no requiere una fortuna. Con unas bandas elásticas, una kettlebell y voluntad, podés lograr resultados profesionales sin pagar una membresía. Te mostramos el arsenal básico indispensable.",
+    "category": "Fitness",
+    "images": [
+      "https://images.unsplash.com/photo-1540497077202-7c8a3999166f?q=80&w=1000&auto=format&fit=crop"
+    ],
+    "createdAt": "2026-04-26T16:00:00.000Z"
+  }
+]
